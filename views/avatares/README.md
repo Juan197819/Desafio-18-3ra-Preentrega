@@ -1,0 +1,1 @@
+Se creo este README xq Heroku no sube carpetas vacias y tira error al no encontrar la carpeta avatares.
