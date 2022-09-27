@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
-import {HOST_MONGO, PORT_MONGO, NODE_ENV, MONGO_ATLAS} from '../../configEntorno.js'
-import {logueoError}from '../../confWinston.js';
+import {HOST_MONGO, PORT_MONGO, NODE_ENV, MONGO_ATLAS} from '../config/configEntorno.js'
+import {logueoError}from '../config/confWinston.js';
 
 class ContenedorMongoDb{
     constructor(nombreColleccion, Schema){
@@ -54,29 +54,36 @@ class ContenedorMongoDb{
             logueoError(`Este es el error en MONGO-GUARDAR: `, error)
         }
     }
-    async modificar(productoAnterior, productoModificado,tipoDeModificacion) {
+    async modificar(elementoAnterior, elementoModificado,tipoDeModificacion) {
+
+        console.log('tipoDeModificacion')
+        console.log(tipoDeModificacion)
+        console.log('tipoDeModificacion')
         switch (tipoDeModificacion) {
             case '$set':
                 try {
-                    return await this.colleccion.updateOne(productoAnterior,{$set: productoModificado})
+                    console.log("set")
+                    return await this.colleccion.updateOne(elementoAnterior,{$set: elementoModificado})
                 } catch (error) {
                     logueoError(`Este es el error en MONGO-MODIFICAR-TIPO SET: `, error)
                 }
-            case '$push':
-                try {
-                    return await this.colleccion.updateOne(productoAnterior,{$push: productoModificado})
+                case '$push':
+                    try {
+                    console.log("push")
+                    return await this.colleccion.updateOne(elementoAnterior,{$push: elementoModificado})
                 } catch (error) {
                     logueoError(`Este es el error en MONGO-MODIFICAR-TIPO PUSH: `, error)
                 }
-            default:
+                default:
+                    try {
+                    console.log("default")
+                    return await this.colleccion.updateOne(elementoAnterior,elementoModificado)
+                } catch (error) {
+                    logueoError(`Este es el error en MONGO-MODIFICAR por DEFAULT: `, error)
+                }
                 break;
         }
         
-        try {
-            return await this.colleccion.updateOne(productoAnterior,productoModificado)
-        } catch (error) {
-            logueoError(`Este es el error en MONGO-MODIFICAR por DEFAULT: `, error)
-        }
     }
 
     async eliminar(id){

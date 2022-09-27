@@ -1,0 +1,56 @@
+<div class="enlaces">
+    <ul>
+        <li><a onclick="return agregarProductos('{{{email}}}')">Productos</a></li>
+        <li><a onclick="return sacarProductos(this)">Ampliar/minimizar Chat</a></li>
+        <li><a  onclick="return irAlCarrito('{{{email}}}')">Carrito prueba</a></li>
+        <li><a href="/api/productos-test">Ir a Tabla de productos aleatoria</a></li>
+        <li><a href="/info">Info del Programa No Comprimida</a></li>
+        <li><a href="/infoComp">Info del Programa Comprimida</a></li>
+        <li><a target="_blank" href="/api/randoms">Numeros Aleatorios</a></li>
+    </ul>
+</div> 
+<div class="flexCol">
+    <div id="filtro">
+    </div>
+    <div id="listaProductos">
+    </div>
+</div>
+<div class="flexCol centro">
+    <div id="msj" class="mensajes flexCol">
+        <h2>Centro de Mensajes</h2>
+        <h2 id="compresion"></h2>
+        <div class="centro ">
+            <form class="flexCol contentCenter" onsubmit='return agregarMensaje(this)'>
+                <div class="flexCol inicio">
+
+                    <label for="email">Email</label>
+                    <input id='email' type="email" required name="email" placeholder="abcd@gmail.com" value="{{{email}}}">
+
+                    <label for="nombre">Nombre</label>
+                    <input id='nombre' type="text" required name="nombre" placeholder="Juan" value="{{{nombre}}}">
+
+                    <label for="apellido">Apellido</label>
+                    <input id='apellido' type="text" required name="apellido" placeholder="Perez" value="{{{apellido}}}">
+
+                    <label for="edad">Edad</label>
+                    <input id='edad' type="number" required name="edad" placeholder="34" value="{{{edad}}}">
+
+                    <label for="alias">Alias</label>
+                    <input id='alias' type="text" required name="alias" placeholder="Juanito" value="Alias">
+
+                    <label for="avatar">Avatar</label>
+                    <input id='avatar' type="text" value="./img/avatares/{{{urlImagen}}}" required name="avatar" placeholder="Perez">
+                </div>
+
+                <div id='conversacion' class="flexCol "></div>
+                <div class="labelMensaje flexCol">
+                    <label for="mensaje">Mensaje</label>
+                    <div class="flexRow">
+                        <input id='mensaje' type="text" placeholder="Escriba aquí su mensaje" name="mensaje" value="Mensaje de prueba">        
+                        <button>Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -5,11 +5,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
  */
 import {calculo} from './childProcess.js'
-import {arg} from '../configEntorno.js'
+import {arg} from '../config/configEntorno.js'
 
-const apiRandom = (req, res) => {
+const getNumRandom = (req, res) => {
     const cant = req.query.cant
-/*     console.log('arg.CLUSTER')
+/*  console.log('arg.CLUSTER')
     console.log(arg.CLUSTER)
 
     if (!arg.cluster&&!arg.CLUSTER&&!arg.FORK&&!arg.fork)  {
@@ -27,7 +27,6 @@ const apiRandom = (req, res) => {
         })
     } else{
                 //EN MODO CLUSTER NATIVO o CLUSTER + FORK de PM2 SE EJECUTA DIRECTAMENTE
-
  */       
     const cantParse = (Number(cant))
     let objeto;
@@ -39,4 +38,4 @@ const apiRandom = (req, res) => {
     res.send( `PUERTO: ${arg.port}, PID: ${process.pid}   `+ JSON.stringify(objeto)); 
 }   
 //}
-export default apiRandom
+export default getNumRandom

@@ -8,7 +8,6 @@ const schemaProductos= new mongoose.Schema({
     codigo: {type: String, required: true, unique: true},
     foto: {type: String, required: true, unique: true},
     precio: {type: Number, required: true},
-    stock: {type: Number, required: true},
 })
 
  class DaoProductosMongo extends ContenedorMongoDb{

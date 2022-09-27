@@ -1,6 +1,6 @@
 import admin from 'firebase-admin'
-import serviceAcount from '../../configFirebase.json' assert {type: "json"};
-import {logueoError}from '../../confWinston.js';
+import serviceAcount from '../config/configFirebase.json' assert {type: "json"};
+import {logueoError}from '../config/confWinston.js';
 
 let db;
 class ContenedorFirebase{

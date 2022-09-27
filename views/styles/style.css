@@ -10,7 +10,6 @@ body{
     background-color: rgb(117, 117, 121);
 }
 
-
 /* --------------HEADER----------------- */
 
 header, .usuario{
@@ -45,12 +44,15 @@ header div{
     padding: 10px 12px;
     border-radius: 10px;
     background-color: rgb(127, 255, 212);
-    max-width: 500px;
     align-items: center;
+    max-width: 400px;
+}
+.w800{
+    max-width: 800px;
 }
 #conversacion{
-flex-wrap: wrap;    
-
+flex-wrap: wrap; 
+width: 100%;
 }
 .mensajes input, .mensajes label, .mensajes button{
     margin:5px;
@@ -84,7 +86,11 @@ form{
 .btnLogout:hover{
     background-color: rgba(49, 33, 98, 0.428);
 }
+.enlaces{
+    max-width:240px;
+}
 ul{
+    max-width:215px;
     margin-left: 22px;
     padding: 1px 0 1px 2px;
     background-color: rgb(85, 85, 114);
@@ -96,6 +102,7 @@ ul{
     font-size: 15px;
     border: none;
     color: black; 
+    margin:40px auto 10px;
 }
 h1{
     padding: 15px;
@@ -114,17 +121,16 @@ h2, h3{
 h3{
     font-size: 15px;
 }
-table,th,td{
+table,th,td, tr{
     border: 1px solid black;
-    background-color: rgba(25, 0, 255, 0.661);
-    font-size: 1rem;
-    padding: 3px;
+    background-color: whitesmoke;
+    padding: 10px;
+
 }
 table{
     border-collapse:collapse;
     margin: 30px auto;
     background-color: whitesmoke;
-    width: 500px;
 }
 li{
     font-size: 13px;
@@ -162,11 +168,11 @@ li{
 .dialogo{
     flex-wrap: wrap;
     display: flex;
-    gap: 5px
+    row-gap: 15px;
+    margin-top:10px;
 }
 .dialogo span{
     display: inline-block;
-    max-width: 250px;
 }
 .dialogo img{
     max-width: 15px;
@@ -177,7 +183,7 @@ li{
     align-items:flex-start;
     gap: 10px;
 }
-button, input, label,p{
+button, input, label{
     margin:5px;
     height: 18px;
     padding: 0px 0px 0px 4px;
@@ -201,7 +207,7 @@ button{
     font-weight: bold;
 }
 p{
-    margin-top: 10px;
+    line-height: 15px;
 }
 button:hover, a:hover{
     background-color:grey;
@@ -212,7 +218,6 @@ button:hover, a:hover{
     font-weight:bold;
     font-size: 12px;
 }
-
 .estiloFecha{
     color:brown;
     font-size: 12px;
@@ -241,12 +246,10 @@ a{
 .iti * {
      box-sizing: content-box!important; 
     -moz-box-sizing: content-box;
-    
 }
 .medio{
     padding: 10px 30px
 }
-
 label{
     margin-bottom: 0;
 }
@@ -260,4 +263,17 @@ label{
 .inicio input{
     width: 100%;
     margin-right: 30px!important;
+}
+.enlaces{
+    width: 40%;
+}
+#conversacion{
+    display: flex;
+}
+span{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.i{
+    text-align: center;
 }

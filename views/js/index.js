@@ -5,12 +5,6 @@ const mostrarSaludo= ()=>{
 
   document.getElementById('saludo').innerHTML=despedida
   document.getElementById('centroMensajes').remove()
-  document.getElementById('boton').remove()
-  document.getElementById('borrarElemento1').remove()
-  document.getElementById('borrarElemento2').remove()
-  document.getElementById('borrarElemento3').remove()
-  document.getElementById('borrarElemento4').remove()
-
   return
 }
 
@@ -54,13 +48,17 @@ const renderMensajes= (mensajesNormalizados)=>{
     let tamañoOriginal =((JSON.stringify(desnormalizada)).length)
     let porcentajeNormalizado=(tamañoNormalizado*100)/tamañoOriginal
     compresion =100- parseInt(porcentajeNormalizado)
-    document.getElementById('compresion').innerHTML= `Compresion: ${compresion}%`;
+    if (document.getElementById('compresion')) {
+      document.getElementById('compresion').innerHTML= `Compresion: ${compresion}%`;
+    }
   }
   const mensajeNuevo = data.map((dato) => { 
-      return (`<p class="dialogo"><span class="estiloMail">${dato.author.id}</span> - <span class="estiloFecha">${new Date().toLocaleDateString()} / ${new Date().toLocaleTimeString()}</span> - <span class="estiloMensaje">${dato.text}</span><img class="avatar" src="${dato.author.avatar}" alt="avatar"></p>`);
-    }).join(" ");
-    
-  document.getElementById('conversacion').innerHTML= mensajeNuevo;
+      return (`<p class="dialogo flexRow"><span class="estiloMail">${dato.author.id}</span> - <span class="estiloFecha">${new Date().toLocaleDateString()} / ${new Date().toLocaleTimeString()}</span> - <span class="estiloMensaje">${dato.text}</span><img class="avatar" src="${dato.author.avatar}" alt="avatar"></p>`);
+    }).join("");
+    if (document.getElementById('conversacion')) {
+      
+      document.getElementById('conversacion').innerHTML= mensajeNuevo;
+    }
 
 }
 

@@ -1,0 +1,104 @@
+ #listaProductos{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    flex-wrap: wrap;
+    align-content:flex-start;
+    flex-grow: 1;
+    flex-shrink: 2;
+    margin: 10px;
+}
+.cardProduct{
+    gap:8px;
+    width: 150px ;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border: solid 1px black;
+    padding: 10px;
+    margin: 20px ;
+    box-shadow: 3px 3px 3px rgba(3, 3, 3, 0.502) ;
+    font-size: 12px;
+    font-weight: bolder;
+}
+.cardProduct p{
+
+    text-align: center;
+}
+.fotoProductos{
+    display: block;
+    max-width: 100% ;
+}
+.precio{
+    height: auto;
+    font-size: 15px;
+}
+.nombreProducto{
+    font-size: 15px;
+    font-weight: lighter;
+    padding-bottom:8px ;
+}
+.stock{
+    font-size: 15px;
+}
+.envio{
+    color:green;
+    width: 100%;
+    padding: 0; 
+   background-color: rgba(0, 179, 255, 0.129);
+    
+}
+.labelMensaje{
+    margin-top: 20px;
+}
+.filtro{
+    display: block;
+    margin: 0;
+    height: 35px;
+    border: 0px;
+    padding: 0;
+    width: 100%;
+    max-width:none;
+    font-size: 15px;
+}
+.botonLupa{
+    margin:0;
+    padding: 8px;
+    height: 35px;
+    width: 40px;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+    border:0;
+    border-left: solid 1px gray;
+}
+.lupa{
+    box-sizing: border-box;
+    padding: 0;
+    height: 20px;
+    width: 20px;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    margin: 0;
+    display: block;
+    background-image: url(../img/lupaGris.png);
+    background-size: cover;
+}
+.botonLupa:hover{
+    background-color:whitesmoke;
+}
+.lupa:hover{
+    background-color:whitesmoke;
+}
+.buscador{
+    border: solid 1.5px rgba(128, 128, 128, 0.614);
+    padding: 0;
+    height: 35px;
+    background-color: whitesmoke;
+    justify-content: space-between;
+    margin: 0 20%;
+
+}

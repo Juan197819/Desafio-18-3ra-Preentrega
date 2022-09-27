@@ -1,22 +1,24 @@
 import fs from 'fs'
-import express, {Router} from 'express';
+import express, {application, Router} from 'express';
 import multer from 'multer';
 import exphbs from 'express-handlebars';
 import {Server as HttpServer} from "http";
 import {Server as IOServer} from "socket.io";
 import lista from './prodAleatorios.js'
 import {daoMensaje, daoUsuario } from './src/index.js';
-import normalizado from './normalizado.js'
+import normalizado from './src/config/configNormalizado.js'
 import session from 'express-session';
 import bcrypt from 'bcrypt';
 import passport from 'passport';
 import {Strategy as LocalStrategy} from 'passport-local';
-import apiRandom from './controllers/apiRandom.js'
 import {cpus as numCPUS} from 'os'
 import cluster from 'cluster';
 import compression from 'compression';
-import {logueoWarning,logueoInfo, logueoError}from './confWinston.js';
-import {PORT,arg} from './configEntorno.js'
+import {logueoWarning, logueoInfo, logueoError}from './src/config/confWinston.js';
+import {PORT,arg} from './src/config/configEntorno.js'
+import routerProductos from './src/routes/routerProductos.js'
+import routerCarrito from './src/routes/routerCarrito.js'
+import routerApiRandoms from './src/routes/routerApiRandoms.js'
 
 //------------SETEO DE SERVER----------
 const app= express(); 
@@ -24,10 +26,9 @@ const httpServer = new HttpServer(app)
 const io = new IOServer(httpServer)
 
 //--------------ROUTER PARA NUMEROS ALEATORIOS-----------
-const routerApiRandoms = Router()
 app.use('/api/randoms',routerApiRandoms)
-routerApiRandoms.use(express.json())
-routerApiRandoms.use(express.urlencoded({extended: true})) 
+app.use('/api/productos', routerProductos)
+app.use('/api/carritos', routerCarrito)
 
 //--------------SETEO DE VISTAS------------
 app.engine('handlebars',exphbs.engine())
@@ -36,10 +37,13 @@ app.set('view engine','handlebars')
 app.set('views', './views')
 app.use(express.json())
 app.use(express.urlencoded({extended: true})) 
+routerCarrito.use(express.json())
+routerCarrito.use(express.urlencoded({extended: true})) 
+routerProductos.use(express.json())
+routerProductos.use(express.urlencoded({extended: true})) 
 
 //-----------SETEO DE PASSPORT-SESION---------
 app.use(session({
-  
   secret: 'secreto', 
   cookie:{
     httpOnly:false,
@@ -75,7 +79,7 @@ passport.use('registro', new LocalStrategy({
   if (user) {
     logueoError('Usuario ya registrado')
     try {
-      await fs.promises.unlink(`./views/avatares/${req.file.filename}`)
+      await fs.promises.unlink(`./views/img/avatares/${req.file.filename}`)
       console.log('Borrado de avatar exitoso')
     } catch (error) {
       logueoError(`Error al borrar imagen: ${error} `)
@@ -108,7 +112,6 @@ passport.use('logueo', new LocalStrategy( async (username,password,done)=>{
   let user;
   try {
     [user]= (await daoUsuario.leer({username}))    
-    
   } catch (error) {
     logueoError('Este es  el error al leer usuario en logueo: ', error) 
     return done(null, false)
@@ -134,7 +137,7 @@ function auth(req, res, next){
 }
 let avatar = multer.diskStorage({
   destination:(req,file,cb)=>{
-    cb(null,'./views/avatares')
+    cb(null,'./views/img/avatares')
   },
   filename:(req,file,cb)=>{
     cb(null,`${Date.now()}-${file.originalname}`)
@@ -156,7 +159,7 @@ app.post('/register', upload.single('imagen'), passportAuthRegister,logueoInfo, 
   req.session.nombre= nombreMayus
   req.session.urlImagen=req.file.filename
   req.session.edad=req.body.edad
-  req.session.apellido= req.body.apellido
+  req.session.apellido= req.body.apellido.toUpperCase()
 
   res.redirect('/centroMensajes')
 })  
@@ -207,15 +210,21 @@ app.get('/logout',auth, logueoInfo,(req, res) => {
 
 //-------------CENTRO DE MENSAJES-- (PAGINA PRINCIPAL) -----------
 
-app.get('/centroMensajes', auth , logueoInfo,(req, res) => {
+app.get('/centroMensajes/:carrito?', auth, logueoInfo,(req, res) => {
   const usuario = {
     nombre:req.session.nombre,
-    urlImagen:req.session.urlImagen,
+    urlImagen:req.session.urlImagen, 
     edad:req.session.edad,
-    apellido:req.session.apellido,
-    email:req.user,
+    apellido:req.session.apellido, 
+    email:req.user,  
   }
-  res.render("centroMensajes",usuario);
+  let carritoExist= req.params.carrito
+  if (carritoExist) {
+    carritoExist = true
+  } else {
+    carritoExist = false
+  }
+  res.render("centroMensajes",{...usuario,carritoExist});
 })
 
 //-------------RUTA INFORMACION---------------
@@ -240,14 +249,9 @@ app.get('/infoComp', compression(), logueoInfo, (req, res) => {
   res.render("info",info)
 })
 
-//-------------GET DE NUMEROS ALEATORIOS -----------
-
-routerApiRandoms.get('/',logueoInfo, apiRandom)
-
 //-------------GET DE PRODUCTOS ALEATORIOS -----------
 
 app.get('/api/productos-test',auth, logueoInfo,(req, res) => {
-    
   let tablaProductos=lista()
   res.render("tablaAleatoria", {tablaProductos});
 })

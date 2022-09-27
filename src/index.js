@@ -1,4 +1,4 @@
-import {PERSISTENCIA} from '../configEntorno.js'
+import {PERSISTENCIA} from './config/configEntorno.js'
 import ContenedorMongoDb from './contenedores/contenedorMongoDB.js'
 import ContenedorFirebase from './contenedores/contenedorFirebase.js'
 

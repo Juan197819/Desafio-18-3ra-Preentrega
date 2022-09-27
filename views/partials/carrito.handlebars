@@ -1,0 +1,24 @@
+<div class="flexCol contentCenter carritoCelda">
+  <H2 style="color:white;">CARRITO</H2>
+  <table class='carritoCelda'>
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th colSpan="2">Subtotal</th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colSpan="6">
+          <span className='total' id='valorCarritoTotal'>Total valor del carrito ${valorCarrito.toFixed(2)}</span>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+  <a class="boton" href="/centroMensajes">Ir a Centro de Mensajes</a>
+</div>

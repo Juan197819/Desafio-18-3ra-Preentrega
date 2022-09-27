@@ -1,0 +1,67 @@
+.carritoCelda th{
+    border-top: 1px solid rgba(68, 64, 64, 0.959);
+}
+.carritoCelda th, .carritoCelda td{
+    border-bottom: 2px solid rgba(68, 64, 64, 0.719);
+    border-collapse: collapse;
+    padding: 8px 20px;
+    box-sizing: border-box;
+}
+
+.contCart{
+    height:100%;
+    justify-content: space-around;
+    align-items: bottom;
+}
+.botonCart{
+    width:100px;
+}
+
+table.carritoCelda{
+    text-align: center;
+    border: 2px solid rgb(68, 64, 64);
+    border-collapse: collapse;
+    margin: 60px;
+    background-color:white;
+}
+div.carritoCelda{
+    width: 100%;
+}
+
+.cesto{
+    border: none;
+}
+
+.displayNone{
+    display:none;
+}
+
+.cesto:hover .displayNone{
+    text-decoration: blue underline;
+    color: rgb(0, 68, 255);
+    padding: 0 20px;
+    position: absolute;
+    display: block;
+}
+
+.cesto:hover{
+    border: 1px solid grey;
+}
+.fotoProductos{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.trCart .fotoProductos{
+    width:100px;
+}
+
+.trCart div.contentCenter{
+    max-width: 100px;
+}
+.carroVacio{
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    text-align: center;
+}
