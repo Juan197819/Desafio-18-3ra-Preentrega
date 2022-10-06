@@ -23,6 +23,7 @@ const agregarMensaje= ()=>{
       text: mensajeTexto.value
     }
     socket.emit("mensajeNuevo", mensaje);
+    
     mensajeTexto.value=""
     mensajeTexto.focus()
     return false
@@ -43,7 +44,6 @@ const renderMensajes= (mensajesNormalizados)=>{
     data= []
   } else {
     data= desnormalizada.mensajes
-    
     let tamañoNormalizado = ((JSON.stringify(mensajesNormalizados)).length)
     let tamañoOriginal =((JSON.stringify(desnormalizada)).length)
     let porcentajeNormalizado=(tamañoNormalizado*100)/tamañoOriginal
@@ -56,12 +56,9 @@ const renderMensajes= (mensajesNormalizados)=>{
       return (`<p class="dialogo flexRow"><span class="estiloMail">${dato.author.id}</span> - <span class="estiloFecha">${new Date().toLocaleDateString()} / ${new Date().toLocaleTimeString()}</span> - <span class="estiloMensaje">${dato.text}</span><img class="avatar" src="${dato.author.avatar}" alt="avatar"></p>`);
     }).join("");
     if (document.getElementById('conversacion')) {
-      
       document.getElementById('conversacion').innerHTML= mensajeNuevo;
     }
-
 }
-
 socket.on("mensajes", (data) => {
   renderMensajes(data);
 });

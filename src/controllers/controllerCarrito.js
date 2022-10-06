@@ -1,4 +1,4 @@
-import {daoCarrito,daoProducto } from '../index.js';
+import {daoCarrito, daoProducto } from '../index.js';
 
 const getProductosCarrito = async (req, res) => {
     try {

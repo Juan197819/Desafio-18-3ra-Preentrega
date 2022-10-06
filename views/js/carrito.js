@@ -1,6 +1,5 @@
 let carrito=[]
 
-
 const vaciarCarrito = async (email,idCarrito)=>{
     console.log(email)
     localStorage.removeItem(email)

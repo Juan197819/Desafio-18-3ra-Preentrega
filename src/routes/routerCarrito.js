@@ -1,9 +1,6 @@
-import { Router, json, urlencoded} from "express";
+import { Router} from "express";
 import {getProductosCarrito, getCarrito, postCarrito, postProductosCarrito, deleteCarrito, deleteProductoCarrito} from '../controllers/controllerCarrito.js'
 const routerCarrito = new Router(); 
-
-routerCarrito.use(json());
-routerCarrito.use(urlencoded({ extended: true }));
 
 routerCarrito.post('/', postCarrito)
 //CREAR CARRITO Y DEVOLVER ID

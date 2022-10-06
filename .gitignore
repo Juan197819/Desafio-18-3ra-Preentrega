@@ -1,6 +1,6 @@
 /node_modules
 /RegistrosProfiling
 /comandosServer.txt
-/principal.handlebars
+./views/partials/principal.handlebars
 
-git commit -m "[ADD] Creacion de carpetas Config, Controllers y Rutesen en src + img en views y creacion de vista de Carrito y funcionalidades completas"                                                                      c creacio" 
+
