@@ -1,16 +1,18 @@
-<header class="flexRow flexContent" >
-    <img class="avatarFoto" src="/img/avatares/{{{urlImagen}}}" alt="AVATAR">
+<header class="flexRow flexContent " >
+    <div id="divid">
+        <img class="avatarFoto" src="/img/avatares/{{{urlImagen}}}" alt="AVATAR">
+    </div>
     <div class="flexCol divTitulo">
             <h2 class="ingreso"><span class="ingreso" id="saludo">Bienvenido/a </span>{{nombre}} {{{apellido}}}</h2>
-            <h3 id="borrarElemento1"><span class="ingresoMail">MAIL: {{{email}}}</span></h3>
+            <h3 id="borrarElemento1"><span class="ingresoMail">{{{email}}}</span></h3>
     </div>
     <a class="btnLogout" href="/logout" id="boton" onclick="mostrarSaludo()">Desloguearse</a>
 </header>
 <main id="centroMensajes"  class="flexRow flexContent">
-    {{#if carritoExist}}
-            {{>carrito}}
-    {{else}}
+    {{#if perfilExist}}
             {{>principal}}
+    {{else}}
+            {{>perfil}}
     {{/if}}
 </main>
 <footer class="flexCol">

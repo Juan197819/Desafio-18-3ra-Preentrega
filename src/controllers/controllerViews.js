@@ -1,17 +1,20 @@
 import {daoUsuario} from '../index.js'
 import { logueoError } from '../config/confWinston.js'
 
+function calcularEdad(fecha) {     
+  //console.log(fecha)
+  let hoy = new Date();
+  let cumpleanos = new Date(fecha);
+  let edad = hoy.getFullYear() - cumpleanos.getFullYear();
+  let m = hoy.getMonth() - cumpleanos.getMonth();
+  if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+    edad--;
+  }
+  //console.log(edad)
+  return edad;
+}
 const getRegister = (req, res) => {
     res.render("register")
-}
-const postRegister = (req, res) => {
-    const nombreMayus= req.body.nombre.toUpperCase()
-    req.session.nombre= nombreMayus
-    req.session.urlImagen=req.file.filename
-    req.session.edad=req.body.edad
-    req.session.apellido= req.body.apellido.toUpperCase()
-  
-    res.redirect('/centroMensajes')
 }
 const getRegisterError = (req, res) => {
     res.render("registerError")
@@ -23,19 +26,9 @@ const getLogin = (req, res) => {
     res.render("login")
   }
 }
-const postLogin = async (req, res) => {
-  const [{nombre,urlImagen,edad,apellido}]= await daoUsuario.leer({username: req.body.username})
-  const nombreMayus= nombre.toUpperCase()
-  req.session.nombre= nombreMayus
-  req.session.urlImagen= urlImagen
-  req.session.edad= edad
-  req.session.apellido= apellido.toUpperCase()
-  res.redirect('/centroMensajes')
-}
 const getLoginError = (req, res) => {
-    res.render("loginError")
+    res.render("errorLogin")
 }
-
 const getLogout = (req, res) => {
     req.session.destroy((err)=>{
       if (!err) {
@@ -49,28 +42,26 @@ const getLogout = (req, res) => {
       console.log('Te deslogueaste con exito')
     })
 }
-const getIndexHome =  (req, res) => {
-  res.redirect('/centroMensajes')
+const getCentroMensajes = async (req, res) => {
+if(!req.session.user){
+  req.session.user=req.user
 }
-const getHome =   (req, res) => {
+  console.log('req.session');
+  const [user] = await daoUsuario.leer({username: req.session.user})
   const usuario = {
-    nombre:req.session.nombre,
-    urlImagen:req.session.urlImagen, 
-    edad:req.session.edad,
-    apellido:req.session.apellido, 
-    email:req.user,  
+    nombre: user.nombre.toUpperCase(),
+    urlImagen:user.urlImagen, 
+    edad: calcularEdad(user.fechaNacimiento),
+    apellido: user.apellido.toUpperCase(), 
+    email:user.username  
   }
-  let carritoExist= req.params.carrito
-  if (carritoExist) {
-    carritoExist = true
+  let perfilExist= req.url
+  if (perfilExist=='/centroMensajes/perfil') {
+    perfilExist = false
   } else {
-    carritoExist = false
+    perfilExist = true
   }
-  res.render("centroMensajes",{...usuario,carritoExist});
+  res.render("centroMensajes",{...usuario,perfilExist});
 }
 
-const getHomePerfil = (req, res) => {
-  
-}
-
-export {getRegister, postRegister, getRegisterError, getLogin, postLogin, getLoginError, getLogout, getIndexHome, getHome, getHomePerfil}
+export {getRegister, getCentroMensajes, getRegisterError, getLogin, getLoginError, getLogout}

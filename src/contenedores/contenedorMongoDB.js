@@ -27,6 +27,8 @@ class ContenedorMongoDb{
     async leer(id){
         let parametroBusqueda = {}
         let tipoDeArgumento;
+        // console.log('id leer');
+        // console.log(id);
         if(id){
             if (id.length==24) {
                 tipoDeArgumento = 'ID'
@@ -40,29 +42,29 @@ class ContenedorMongoDb{
         }
         try {
             console.log(tipoDeArgumento)
-            const productos= await this.colleccion.find(parametroBusqueda, {__v:0})
-            return productos
+            // console.log('parametroBusqueda')
+            // console.log(parametroBusqueda)
+
+            const datos= await this.colleccion.find(parametroBusqueda, {__v:0})
+            return datos
         } catch (error) {
             logueoError(`Este es el error en MONGO-LEER con Argumento: ${tipoDeArgumento}`, error)
         }
     }
     async guardar(datos) {
         try {
-            let productoAgregado = await this.colleccion.create(datos)
-            return productoAgregado
+            let datoAgregado = await this.colleccion.create(datos)
+            return datoAgregado
         } catch (error) {
             logueoError(`Este es el error en MONGO-GUARDAR: `, error)
         }
     }
     async modificar(elementoAnterior, elementoModificado,tipoDeModificacion) {
 
-        console.log('tipoDeModificacion')
-        console.log(tipoDeModificacion)
-        console.log('tipoDeModificacion')
+        console.log('tipoDeModificacion' + tipoDeModificacion)
         switch (tipoDeModificacion) {
             case '$set':
                 try {
-                    console.log("set")
                     return await this.colleccion.updateOne(elementoAnterior,{$set: elementoModificado})
                 } catch (error) {
                     logueoError(`Este es el error en MONGO-MODIFICAR-TIPO SET: `, error)
@@ -77,7 +79,7 @@ class ContenedorMongoDb{
                 default:
                     try {
                     console.log("default")
-                    return await this.colleccion.updateOne(elementoAnterior,elementoModificado)
+                    return await this.colleccion.update(elementoAnterior,elementoModificado)
                 } catch (error) {
                     logueoError(`Este es el error en MONGO-MODIFICAR por DEFAULT: `, error)
                 }
@@ -89,8 +91,8 @@ class ContenedorMongoDb{
     async eliminar(id){
         try {
             let parametroBusqueda = {'_id' :id} 
-            const productos= await this.colleccion.deleteOne(parametroBusqueda)
-            return productos
+            const datos= await this.colleccion.deleteOne(parametroBusqueda)
+            return datos
         } catch (error) {
             logueoError(`Este es el error en MONGO-ELIMINAR: `, error)
         }

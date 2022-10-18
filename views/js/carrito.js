@@ -52,7 +52,7 @@ const irAlCarrito= async (email)=>{
               <td id='tr${product._id}'>${(product.cantidad*product.precio).toFixed(2)}</td>
               <td>
               <button value=${product._id} class='cesto boton' onclick='return removeItem("${product._id}","${email}")'>
-                  <img class='cesto' src= '../img/cesto.png' alt='Eliminar'/>
+                  <img class='cesto' src= '../img/icons/cesto.png' alt='Eliminar'/>
                   <span class='displayNone'>Eliminar</span>
               </button>
               </td>

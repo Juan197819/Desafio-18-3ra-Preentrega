@@ -9,5 +9,5 @@ let avatar = multer.diskStorage({
     }
   })
   const upload = multer({storage:avatar})
-  
+  console.log('ESTAS EN UPLOAD');
   export default upload

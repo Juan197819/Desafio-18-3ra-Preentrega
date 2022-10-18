@@ -17,11 +17,11 @@ passport.use('login', new LocalStrategy(
             logueoError('Usuario no encontrado')
             return done(null, false)
         }
+        console.log('LOGUEO EXITOSO')
+        return done(null, user)
+    }
+)) 
 
-console.log('LOGUEO EXITOSO')
-return done(null, user)
-})) 
-
-const passportAuthLogin=  passport.authenticate('login',{failureRedirect:'/login/error'})
+const passportAuthLogin=  passport.authenticate('login',{failureRedirect:'/login/error', successRedirect: '/centroMensajes'})
 
 export default passportAuthLogin

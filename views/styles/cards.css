@@ -84,7 +84,7 @@
     background-color: whitesmoke;
     margin: 0;
     display: block;
-    background-image: url(../img/lupaGris.png);
+    background-image: url(../img/icons/lupaGris.png);
     background-size: cover;
 }
 .botonLupa:hover{

@@ -1,0 +1,115 @@
+.fotoGrande{
+    position: relative;
+    height: 170px;
+    max-width: 200px;
+    top: 50px;
+    left: 80px;
+    border: 4px solid white;
+    z-index: 0;
+    
+}
+.headerFijo{
+    height: 130px;
+}
+.headerFijo span{
+    font-size: 25px;
+}
+.headerFijo h2, .headerFijo h2 span{
+    font-size: 35px;
+}
+.bienvPerfil{   
+align-items: center;
+margin-top: 15px;
+}
+.mainPerfil{
+    justify-content: space-around;
+    align-items: center;
+}
+.perfil{
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 8px;
+    border-radius: 8px;
+    width: 400px;
+    margin-top: 40px;
+    padding-right: 50px;
+
+}
+.perfil span:first-child{
+    font-weight: bolder;
+    
+}
+.perfil p{
+    font-size: 20px;
+    margin:15px;
+    font-family: 'Hind Vadodara', sans-serif;
+}
+.lapiz{
+    background: rgb(255, 255, 255);
+    width: 45px;
+    border-radius: 60px;
+    position: relative;
+    left: 401px;
+    top: 89px;
+    border: 2px solid rgb(255, 255, 255) ;
+    cursor: pointer;
+}
+.lapiz img{
+    background: rgb(255, 255, 255);
+    text-align: center;
+    width: 30px;
+    display:block;
+    position: relative;
+
+    margin: 7px
+}
+.editarPerfil{
+    position: absolute;
+    z-index: 2;
+    right: -37px
+}
+.difuso{
+    background-color: rgba(97, 91, 91, 0.235);
+   color: rgba(97, 91, 91, 0.235);
+}
+
+.salir{
+    position: absolute;
+    background-color: rgb(127, 255, 212);
+    top: 40px;
+    right: 50px;
+    padding: 8px;
+    font-size: 30px;
+    font-family: cursive;
+    cursor: pointer;
+}
+.camara{
+    width:35px;
+    height:35px;
+    display:block;
+}
+.camaraDiv{
+    border-radius: 45px;
+    border: solid 2px rgb(223, 15, 15);
+    position: absolute;
+    top:195px;
+    left:280px;                                  
+    cursor: pointer;
+    padding:  8px;
+    width: 40px;
+    height: 40px;
+    background-image: url(../img/icons/camara.png);
+    background-color: whitesmoke;
+    background-size: cover;
+    z-index: 1;
+}
+.camaraDiv  input{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    -moz-opacity: 0;
+    opacity: 0;
+    z-index: 2; 
+    margin: 0;
+    top: -2px;
+    left: -3px;
+}   

@@ -5,6 +5,8 @@ const mostrarSaludo= ()=>{
 
   document.getElementById('saludo').innerHTML=despedida
   document.getElementById('centroMensajes').remove()
+  document.getElementById('form')&&document.getElementById('form').remove()
+  document.getElementById('divid').remove()
   return
 }
 
@@ -44,9 +46,9 @@ const renderMensajes= (mensajesNormalizados)=>{
     data= []
   } else {
     data= desnormalizada.mensajes
-    let tamañoNormalizado = ((JSON.stringify(mensajesNormalizados)).length)
-    let tamañoOriginal =((JSON.stringify(desnormalizada)).length)
-    let porcentajeNormalizado=(tamañoNormalizado*100)/tamañoOriginal
+    let tamanioNormalizado = ((JSON.stringify(mensajesNormalizados)).length)
+    let tamanioOriginal =((JSON.stringify(desnormalizada)).length)
+    let porcentajeNormalizado=(tamanioNormalizado*100)/tamanioOriginal
     compresion =100- parseInt(porcentajeNormalizado)
     if (document.getElementById('compresion')) {
       document.getElementById('compresion').innerHTML= `Compresion: ${compresion}%`;

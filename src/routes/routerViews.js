@@ -1,7 +1,7 @@
 import { Router} from "express";
-import upload from "./middleware/uploadAvatarImage.js";
+import upload from "../routes/middleware/uploadAvatarImage.js";
 import {logueoInfo} from '../config/confWinston.js';
-import {getRegister, postRegister, getRegisterError, getLogin, postLogin, getLoginError, getLogout, getIndexHome, getHome, getHomePerfil} from '../controllers/controllerViews.js'
+import {getRegister, getCentroMensajes, getRegisterError, getLogin, getLoginError, getLogout} from '../controllers/controllerViews.js'
 import passportAuthRegister from "./middleware/passportStrategies/passportRegister.js";
 import passportAuthLogin from "./middleware/passportStrategies/passportLogin.js";
 import auth from "./middleware/auth.js" 
@@ -12,16 +12,15 @@ const routerLogout  = new Router();
 const routerHome = new Router();
 
 routerRegister.get('/', logueoInfo, getRegister)  
-routerRegister.post('/', upload.single('imagen'), passportAuthRegister, logueoInfo, postRegister)  
+routerRegister.post('/', upload.single('imagen'), logueoInfo, passportAuthRegister)  
 routerRegister.get('/error', logueoInfo, getRegisterError) 
 
 routerLogin.get('/', logueoInfo, getLogin)  
-routerLogin.post('/', upload.single('imagen'), passportAuthLogin, logueoInfo, postLogin)  
+routerLogin.post('/',logueoInfo, passportAuthLogin )  
 routerLogin.get('/error', logueoInfo, getLoginError) 
 
-routerHome.get('', auth, logueoInfo, getIndexHome)
-routerHome.get('/centroMensajes', auth, logueoInfo, getHome)
-routerHome.get('/perfil', auth, logueoInfo, getHomePerfil)
+// routerHome.get('', auth, logueoInfo, getHome)
+routerHome.get('/:centroMensajes?/:perfil?', auth,  logueoInfo, getCentroMensajes)
 
 routerLogout.get('/', auth, logueoInfo, getLogout) 
 

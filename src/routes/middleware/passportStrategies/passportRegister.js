@@ -26,25 +26,30 @@ passport.use('register', new LocalStrategy({
       return done(null, false)
     }
     
+    const fechaNacimiento= `${req.body.anio},${req.body.mes},${req.body.dia}`
     const usuarioNuevo= {
       nombre:req.body.nombre,
       apellido:req.body.apellido,
+      fechaNacimiento: fechaNacimiento,
       direccion:req.body.direccion,
-      edad:req.body.edad,
       urlImagen:req.file.filename,
       telefono: req.body.phone,
       username: username,
       password: bcrypt.hashSync(password, bcrypt.genSaltSync(10))
     }
+    console.log('usuarioNuevo')
+    console.log(usuarioNuevo)
+    console.log('usuarioNuevo')
     try {
      await daoUsuario.guardar(usuarioNuevo)
      console.log('REGISTRO EXITOSO')
     } catch (error) {
       logueoError('Este es  el error al guardar usuarioNuevo: ', error)
     }
+    req.session.user= username
     return done(null, usuarioNuevo)
   }))  
 
-const passportAuthRegister =passport.authenticate('register',{failureRedirect:'/register/error'})  
+const passportAuthRegister =passport.authenticate('register',{failureRedirect:'/register/error', successRedirect: '/centroMensajes'})  
 
 export default passportAuthRegister

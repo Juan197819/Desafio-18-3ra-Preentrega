@@ -1,8 +1,35 @@
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"_message":"Usuarios validation failed","errors":{"edad":{"kind":"Number","message":"Cast to Number failed for value \"90-05-18\" (type string) at path \"edad\"","name":"CastError","path":"edad","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"90-05-18\"","value":"90-05-18","valueType":"string"}},"level":"error","message":"Este es el error en MONGO-GUARDAR:  Usuarios validation failed: edad: Cast to Number failed for value \"90-05-18\" (type string) at path \"edad\"","stack":"ValidationError: Usuarios validation failed: edad: Cast to Number failed for value \"90-05-18\" (type string) at path \"edad\"\n    at model.Document.invalidate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:3051:32)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1406:12)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1089:16)\n    at model.Document (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:166:12)\n    at model.Model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:119:12)\n    at new model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:4926:15)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3107:22\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3142:7\n    at Array.forEach (<anonymous>)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3141:15"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"_message":"Usuarios validation failed","errors":{"edad":{"kind":"Number","message":"Cast to Number failed for value \"90-05-18\" (type string) at path \"edad\"","name":"CastError","path":"edad","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"90-05-18\"","value":"90-05-18","valueType":"string"}},"level":"error","message":"Este es el error en MONGO-GUARDAR:  Usuarios validation failed: edad: Cast to Number failed for value \"90-05-18\" (type string) at path \"edad\"","stack":"ValidationError: Usuarios validation failed: edad: Cast to Number failed for value \"90-05-18\" (type string) at path \"edad\"\n    at model.Document.invalidate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:3051:32)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1406:12)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1089:16)\n    at model.Document (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:166:12)\n    at model.Model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:119:12)\n    at new model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:4926:15)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3107:22\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3142:7\n    at Array.forEach (<anonymous>)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3141:15"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"_message":"Usuarios validation failed","errors":{"añoNacimiento":{"kind":"required","message":"Path `añoNacimiento` is required.","name":"ValidatorError","path":"añoNacimiento","properties":{"message":"Path `añoNacimiento` is required.","path":"añoNacimiento","type":"required"}},"diaNacimiento":{"kind":"required","message":"Path `diaNacimiento` is required.","name":"ValidatorError","path":"diaNacimiento","properties":{"message":"Path `diaNacimiento` is required.","path":"diaNacimiento","type":"required"}},"mesNacimiento":{"kind":"required","message":"Path `mesNacimiento` is required.","name":"ValidatorError","path":"mesNacimiento","properties":{"message":"Path `mesNacimiento` is required.","path":"mesNacimiento","type":"required"}}},"level":"error","message":"Este es el error en MONGO-GUARDAR:  Usuarios validation failed: añoNacimiento: Path `añoNacimiento` is required., mesNacimiento: Path `mesNacimiento` is required., diaNacimiento: Path `diaNacimiento` is required.","stack":"ValidationError: Usuarios validation failed: añoNacimiento: Path `añoNacimiento` is required., mesNacimiento: Path `mesNacimiento` is required., diaNacimiento: Path `diaNacimiento` is required.\n    at model.Document.invalidate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:3051:32)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:2839:17\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\schematype.js:1340:9\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"_message":"Usuarios validation failed","errors":{"añoNacimiento":{"kind":"required","message":"Path `añoNacimiento` is required.","name":"ValidatorError","path":"añoNacimiento","properties":{"message":"Path `añoNacimiento` is required.","path":"añoNacimiento","type":"required"}},"diaNacimiento":{"kind":"required","message":"Path `diaNacimiento` is required.","name":"ValidatorError","path":"diaNacimiento","properties":{"message":"Path `diaNacimiento` is required.","path":"diaNacimiento","type":"required"}},"mesNacimiento":{"kind":"required","message":"Path `mesNacimiento` is required.","name":"ValidatorError","path":"mesNacimiento","properties":{"message":"Path `mesNacimiento` is required.","path":"mesNacimiento","type":"required"}}},"level":"error","message":"Este es el error en MONGO-GUARDAR:  Usuarios validation failed: diaNacimiento: Path `diaNacimiento` is required., mesNacimiento: Path `mesNacimiento` is required., añoNacimiento: Path `añoNacimiento` is required.","stack":"ValidationError: Usuarios validation failed: diaNacimiento: Path `diaNacimiento` is required., mesNacimiento: Path `mesNacimiento` is required., añoNacimiento: Path `añoNacimiento` is required.\n    at model.Document.invalidate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:3051:32)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:2839:17\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\schematype.js:1340:9\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"_message":"Usuarios validation failed","errors":{"añoNacimiento":{"kind":"required","message":"Path `añoNacimiento` is required.","name":"ValidatorError","path":"añoNacimiento","properties":{"message":"Path `añoNacimiento` is required.","path":"añoNacimiento","type":"required"}}},"level":"error","message":"Este es el error en MONGO-GUARDAR:  Usuarios validation failed: añoNacimiento: Path `añoNacimiento` is required.","stack":"ValidationError: Usuarios validation failed: añoNacimiento: Path `añoNacimiento` is required.\n    at model.Document.invalidate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:3051:32)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:2839:17\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\schematype.js:1340:9\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"_message":"Mensajes validation failed","errors":{"author.edad":{"kind":"Number","message":"Cast to Number failed for value \"18/5/90\" (type string) at path \"author.edad\"","name":"CastError","path":"author.edad","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"18/5/90\"","value":"18/5/90","valueType":"string"}},"level":"error","message":"Este es el error en MONGO-GUARDAR:  Mensajes validation failed: author.edad: Cast to Number failed for value \"18/5/90\" (type string) at path \"author.edad\"","stack":"ValidationError: Mensajes validation failed: author.edad: Cast to Number failed for value \"18/5/90\" (type string) at path \"author.edad\"\n    at model.Document.invalidate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:3051:32)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1406:12)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1169:14)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1073:14)\n    at model.Document (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:166:12)\n    at model.Model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:119:12)\n    at new model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:4926:15)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3107:22\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3142:7\n    at Array.forEach (<anonymous>)"}
+{"_message":"Mensajes validation failed","errors":{"author.edad":{"kind":"Number","message":"Cast to Number failed for value \"18/5/90\" (type string) at path \"author.edad\"","name":"CastError","path":"author.edad","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"18/5/90\"","value":"18/5/90","valueType":"string"}},"level":"error","message":"Este es el error en MONGO-GUARDAR:  Mensajes validation failed: author.edad: Cast to Number failed for value \"18/5/90\" (type string) at path \"author.edad\"","stack":"ValidationError: Mensajes validation failed: author.edad: Cast to Number failed for value \"18/5/90\" (type string) at path \"author.edad\"\n    at model.Document.invalidate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:3051:32)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1406:12)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1169:14)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1073:14)\n    at model.Document (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:166:12)\n    at model.Model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:119:12)\n    at new model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:4926:15)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3107:22\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3142:7\n    at Array.forEach (<anonymous>)"}
+{"_message":"Mensajes validation failed","errors":{"author.edad":{"kind":"Number","message":"Cast to Number failed for value \"18/5/90\" (type string) at path \"author.edad\"","name":"CastError","path":"author.edad","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"18/5/90\"","value":"18/5/90","valueType":"string"}},"level":"error","message":"Este es el error en MONGO-GUARDAR:  Mensajes validation failed: author.edad: Cast to Number failed for value \"18/5/90\" (type string) at path \"author.edad\"","stack":"ValidationError: Mensajes validation failed: author.edad: Cast to Number failed for value \"18/5/90\" (type string) at path \"author.edad\"\n    at model.Document.invalidate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:3051:32)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1406:12)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1169:14)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1073:14)\n    at model.Document (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:166:12)\n    at model.Model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:119:12)\n    at new model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:4926:15)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3107:22\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3142:7\n    at Array.forEach (<anonymous>)"}
+{"_message":"Mensajes validation failed","errors":{"author.edad":{"kind":"Number","message":"Cast to Number failed for value \"18/5/90\" (type string) at path \"author.edad\"","name":"CastError","path":"author.edad","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"18/5/90\"","value":"18/5/90","valueType":"string"}},"level":"error","message":"Este es el error en MONGO-GUARDAR:  Mensajes validation failed: author.edad: Cast to Number failed for value \"18/5/90\" (type string) at path \"author.edad\"","stack":"ValidationError: Mensajes validation failed: author.edad: Cast to Number failed for value \"18/5/90\" (type string) at path \"author.edad\"\n    at model.Document.invalidate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:3051:32)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1406:12)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1169:14)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1073:14)\n    at model.Document (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:166:12)\n    at model.Model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:119:12)\n    at new model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:4926:15)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3107:22\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3142:7\n    at Array.forEach (<anonymous>)"}
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
@@ -12,8 +39,98 @@
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
 {"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"_message":"Usuarios validation failed","errors":{"fechaNacimiento":{"kind":"Number","message":"Cast to Number failed for value \"1990,05,18\" (type string) at path \"fechaNacimiento\"","name":"CastError","path":"fechaNacimiento","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"1990,05,18\"","value":"1990,05,18","valueType":"string"}},"level":"error","message":"Este es el error en MONGO-GUARDAR:  Usuarios validation failed: fechaNacimiento: Cast to Number failed for value \"1990,05,18\" (type string) at path \"fechaNacimiento\"","stack":"ValidationError: Usuarios validation failed: fechaNacimiento: Cast to Number failed for value \"1990,05,18\" (type string) at path \"fechaNacimiento\"\n    at model.Document.invalidate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:3051:32)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1406:12)\n    at model.$set (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:1089:16)\n    at model.Document (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\document.js:166:12)\n    at model.Model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:119:12)\n    at new model (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:4926:15)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3107:22\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3142:7\n    at Array.forEach (<anonymous>)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:3141:15"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
 {"level":"error","message":"Usuario no encontrado"}
 {"level":"error","message":"Usuario ya registrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario ya registrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario ya registrado"}
+{"level":"error","message":"Usuario ya registrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
 {"level":"error","message":"Usuario no encontrado"}
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
@@ -44,3 +161,248 @@
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
 {"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO SET:  Invalid atomic update value for $set. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $set. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO PUSH:  Invalid atomic update value for $push. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $push. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO SET:  Invalid atomic update value for $set. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $set. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO PUSH:  Invalid atomic update value for $push. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $push. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO SET:  Invalid atomic update value for $set. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $set. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO PUSH:  Invalid atomic update value for $push. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $push. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO SET:  Invalid atomic update value for $set. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $set. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO PUSH:  Invalid atomic update value for $push. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $push. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO SET:  Invalid atomic update value for $set. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $set. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO PUSH:  Invalid atomic update value for $push. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $push. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO SET:  Invalid atomic update value for $set. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $set. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO PUSH:  Invalid atomic update value for $push. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $push. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO SET:  Invalid atomic update value for $set. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $set. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO PUSH:  Invalid atomic update value for $push. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $push. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO SET:  Invalid atomic update value for $set. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $set. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO PUSH:  Invalid atomic update value for $push. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $push. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO SET:  Invalid atomic update value for $set. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $set. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO PUSH:  Invalid atomic update value for $push. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $push. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO SET:  Invalid atomic update value for $set. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $set. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO PUSH:  Invalid atomic update value for $push. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $push. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO SET:  Invalid atomic update value for $set. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $set. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Este es el error en MONGO-MODIFICAR-TIPO PUSH:  Invalid atomic update value for $push. Expected an object, received undefined","stack":"Error: Invalid atomic update value for $push. Expected an object, received undefined\n    at castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\castUpdate.js:102:13)\n    at model.Query._castUpdate (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:5012:10)\n    at model.Query._updateThunk (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4187:27)\n    at model.Query.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:4288:23)\n    at model.Query._wrappedThunk [as _updateOne] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\helpers\\query\\wrapThunk.js:27:8)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\kareem\\index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Este es el error en MONGO-LEER con Argumento: OBJETO Parameter \"filter\" to find() must be an object, got id","stack":"ObjectParameterError: Parameter \"filter\" to find() must be an object, got id\n    at model.Query.Query.find (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\query.js:2336:16)\n    at Function.find (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\mongoose\\lib\\model.js:2173:13)\n    at DaoUsuariosMongo.leer (file:///C:/Users/juanp/OneDrive/Escritorio/Desafio-18-3ra-Preentrega/src/contenedores/contenedorMongoDB.js:43:52)\n    at putUsuarios (file:///C:/Users/juanp/OneDrive/Escritorio/Desafio-18-3ra-Preentrega/src/controllers/controllerUsuarios.js:40:40)\n    at Layer.handle [as handle_request] (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at done (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\multer\\lib\\make-middleware.js:45:7)\n    at indicateDone (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\multer\\lib\\make-middleware.js:49:68)\n    at C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\multer\\lib\\make-middleware.js:155:11\n    at WriteStream.<anonymous> (C:\\Users\\juanp\\OneDrive\\Escritorio\\Desafio-18-3ra-Preentrega\\node_modules\\multer\\storage\\disk.js:43:9)"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"USUARIO NO AUTENTICADO, DEBE LOGUEARSE"}
+{"level":"error","message":"Usuario no encontrado"}

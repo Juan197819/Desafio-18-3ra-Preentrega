@@ -16,6 +16,7 @@ import {PORT,arg} from './src/config/configEntorno.js'
 
 import routerProductos from './src/routes/routerProductos.js'
 import routerCarrito from './src/routes/routerCarrito.js'
+import routerUsuarios from './src/routes/routerUsuarios.js'
 import routerApiRandoms from './src/routes/routerApiRandoms.js'
 import {routerRegister, routerLogin, routerLogout, routerHome} from './src/routes/routerViews.js'
 import auth from './src/routes/middleware/auth.js'
@@ -54,6 +55,7 @@ passport.deserializeUser((username,done)=>{
   //--------------ROUTERS-----------
 app.use('/api/randoms',routerApiRandoms)
 app.use('/api/productos', routerProductos)
+app.use('/api/usuarios', routerUsuarios)
 app.use('/api/carritos', routerCarrito)
 app.use('/register', routerRegister)
 app.use('/login', routerLogin)
