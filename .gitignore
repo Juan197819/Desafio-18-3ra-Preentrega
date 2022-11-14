@@ -2,5 +2,6 @@
 /RegistrosProfiling
 /comandosServer.txt
 ./views/partials/principal.handlebars
+.env
 
 
