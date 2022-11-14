@@ -1,16 +1,17 @@
-import { Router} from "express";
+import {Router} from "express";
 import {getProductosCarrito, getCarrito, postCarrito, postProductosCarrito, deleteCarrito, deleteProductoCarrito} from '../controllers/controllerCarrito.js'
 const routerCarrito = new Router(); 
 
-routerCarrito.post('/', postCarrito)
-//CREAR CARRITO Y DEVOLVER ID
-routerCarrito.delete('/:id', deleteCarrito)
-//VACIAR CARRITO Y ELIMINAR
-routerCarrito.get('/:id/productos', getProductosCarrito)
 //LISTAR PROD GUARDADOS EN CARRITO
+routerCarrito.get('/:id/productos', getProductosCarrito)
+//LISTAR CARRITOS COMPLETOS
 routerCarrito.get('/:id?', getCarrito) 
-routerCarrito.post('/:id/productos', postProductosCarrito)
+//CREAR CARRITO Y DEVOLVER ID
+routerCarrito.post('/', postCarrito)
 //AGREGAR PROD AL CARRITO X ID DE PROD
-routerCarrito.delete('/:id/productos/:id_prod', deleteProductoCarrito)
+routerCarrito.post('/:id/productos', postProductosCarrito)
+//VACIAR CARRITO Y ELIMINAR
+routerCarrito.delete('/:id', deleteCarrito)
 //ELIMINAR PROD DEL CARRITO X ID DE CARRITO Y DE PROD
+routerCarrito.delete('/:id/productos/:id_prod/:cantidadEliminada?', deleteProductoCarrito)
 export default routerCarrito

@@ -1,85 +1,55 @@
-import {daoUsuario } from '../index.js';
-import fs from 'fs'
+import ServiceUsuarios from '../services/serviceUsuarios.js';
+const newServiceUsuario = new ServiceUsuarios()
 
 const getUsuarios = async (req, res) => {
-    let filtro;
     try { 
-        const id= req.params.id;
-        if (id) {
-            filtro = id
-        } else if(req.user){
-            filtro= {
-                username: req.session.user
-            }
-        }
-        let resultado = await daoUsuario.leer(filtro)
-
-        if (!resultado.length) {
+        let filtroUsuario=req.params.id||req.user&&{username: req.session.user}
+        let usuarios = await newServiceUsuario.serviceGetUsuarios(filtroUsuario)
+        if (!usuarios.length) {
             res.json("Usuario no existente")
         }else{
-            res.json(resultado);
+            res.json(usuarios);
         }
     } catch (error) {
-        console.log(error)
-        res.json(error)
+        console.log('Error getUsuarios: ', error)
+        res.json({error})
     }
 }
 const postUsuarios = async (req, res) => {
+
     try {
-        let usuario = req.body
-        prod = await daoUsuario.guardar(usuario)
-        res.json('Usuario Creado Exitosamente')
+        const datosPersonales = req.body
+        const urlImagen = req.file.filename
+        const nuevoId= await newServiceUsuario.servicePostUsuarios(datosPersonales,urlImagen)    
+        console.log('REGISTRO EXITOSO: ' + nuevoId)
+        res.redirect('/centroMensajes')
     } catch (error) {
-        console.log(error)
-        res.json(error)
+        console.log('Error postUsuarios: ', error)
+        res.json({error})
     }
 }
 const putUsuarios = async (req, res) => {
-    console.log('ADENTRO DE PUTUSUARIOS');
-    const id = req.params.id;
     try {
-        let isExist = await daoUsuario.leer(id)
-        if (!isExist.length) {
-            res.json("Producto no existente (metodo PUT)")
-        }else{
-            let newData
-            if (req.file) {
-                try {
-                    await fs.promises.unlink(`./views/img/avatares/${isExist[0].urlImagen}`)
-                } catch (error) {
-                    console.log('Error borrando imagen anterior' + error);
-                    new Error (error)
-                }
-                newData={   
-                    urlImagen:req.file.filename,
-                }
-            } else {
-                newData=req.body
-                req.session.user= req.body.username
-            }
-
-            await daoUsuario.modificar(...isExist, newData,'$set')
-            res.json('Producto Modificado Exitosamente')
-        }
+        const id = req.params.id;
+        const avatar = req.file
+        const datosNuevos = req.body
+        const newData= await newServiceUsuario.servicePutUsuarios(id,avatar,datosNuevos)  
+        if (!avatar) req.session.user= datosNuevos.username
+        res.json('Usuario Modificado Exitosamente')
     } catch (error) {
-        console.log(error)
-        res.json(error)
+        console.log('Error putUsuarios: ', error)
+        res.json({error})
     }
 }
+
 const deleteUsuarios =async (req, res) => {
     try {  
         const id = req.params.id;
-        let isExist = await daoUsuario.leer(id)
- 
-        if (!isExist.length) {
-            res.json("Usuario no existente (metodo DELETE)")
-        } else {
-            const prod = await daoUsuario.eliminar(id)
-            res.json('Usuario Eliminado Exitosamente')
-        }
+        const response= await newServiceUsuario.serviceDeleteUsuarios(id)    
+        res.json(response)
     } catch (error) {
-     console.log(error)
-     res.json(error)
+        console.log('Error deleteUsuarios: ', error)
+        res.json({error})
     }
  }
 

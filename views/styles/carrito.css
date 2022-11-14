@@ -20,9 +20,7 @@
 table.carritoCelda{
     text-align: center;
     border: 2px solid rgb(68, 64, 64);
-    border-collapse: collapse;
     margin: 60px;
-    background-color:white;
 }
 div.carritoCelda{
     width: 100%;

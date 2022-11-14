@@ -17,7 +17,10 @@ import {PORT,arg} from './src/config/configEntorno.js'
 import routerProductos from './src/routes/routerProductos.js'
 import routerCarrito from './src/routes/routerCarrito.js'
 import routerUsuarios from './src/routes/routerUsuarios.js'
+import routerOrdenes from './src/routes/routerOrdenes.js'
 import routerApiRandoms from './src/routes/routerApiRandoms.js'
+
+
 import {routerRegister, routerLogin, routerLogout, routerHome} from './src/routes/routerViews.js'
 import auth from './src/routes/middleware/auth.js'
 
@@ -57,6 +60,7 @@ app.use('/api/randoms',routerApiRandoms)
 app.use('/api/productos', routerProductos)
 app.use('/api/usuarios', routerUsuarios)
 app.use('/api/carritos', routerCarrito)
+app.use('/api/ordenes', routerOrdenes)
 app.use('/register', routerRegister)
 app.use('/login', routerLogin)
 app.use('/logout', routerLogout)
@@ -121,7 +125,6 @@ io.on("connection", (socket) => {
 
 if ((!arg.CLUSTER&&!arg.cluster)|| !cluster.isPrimary){
   console.log(`Proceso Worker ${process.pid} Iniciado`);
-
   const connectedServer = httpServer.listen(PORT, () => {
     console.log(`Servidor con Websockets en el puerto ${connectedServer.address().port}`);
   });

@@ -12,7 +12,7 @@ const routerLogout  = new Router();
 const routerHome = new Router();
 
 routerRegister.get('/', logueoInfo, getRegister)  
-routerRegister.post('/', upload.single('imagen'), logueoInfo, passportAuthRegister)  
+// routerRegister.post('/', upload.single('imagen'), logueoInfo, passportAuthRegister)  
 routerRegister.get('/error', logueoInfo, getRegisterError) 
 
 routerLogin.get('/', logueoInfo, getLogin)  

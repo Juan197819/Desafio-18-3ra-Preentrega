@@ -21,14 +21,13 @@ class ContenedorMongoDb{
             console.log('Base de datos MongoDB conectada')
         } catch (error) {
             logueoError('Error en la conexion de MongoDB: ', error)
+            throw ('Error en la conexion de MongoDB: ' + error)
         }
     }
 
     async leer(id){
         let parametroBusqueda = {}
         let tipoDeArgumento;
-        // console.log('id leer');
-        // console.log(id);
         if(id){
             if (id.length==24) {
                 tipoDeArgumento = 'ID'
@@ -41,14 +40,11 @@ class ContenedorMongoDb{
             tipoDeArgumento = 'VACIO'
         }
         try {
-            console.log(tipoDeArgumento)
-            // console.log('parametroBusqueda')
-            // console.log(parametroBusqueda)
-
             const datos= await this.colleccion.find(parametroBusqueda, {__v:0})
             return datos
         } catch (error) {
             logueoError(`Este es el error en MONGO-LEER con Argumento: ${tipoDeArgumento}`, error)
+            throw (`Este es el error en MONGO-LEER con Argumento: ${tipoDeArgumento}`+ error)
         }
     }
     async guardar(datos) {
@@ -57,49 +53,48 @@ class ContenedorMongoDb{
             return datoAgregado
         } catch (error) {
             logueoError(`Este es el error en MONGO-GUARDAR: `, error)
+            throw (`Este es el error en MONGO-GUARDAR: `+ error)
         }
     }
     async modificar(elementoAnterior, elementoModificado,tipoDeModificacion) {
-
-        console.log('tipoDeModificacion' + tipoDeModificacion)
         switch (tipoDeModificacion) {
             case '$set':
                 try {
-                    return await this.colleccion.updateOne(elementoAnterior,{$set: elementoModificado})
+                    await this.colleccion.updateOne(elementoAnterior,{$set: elementoModificado})
                 } catch (error) {
                     logueoError(`Este es el error en MONGO-MODIFICAR-TIPO SET: `, error)
+                    throw (`Este es el error en MONGO-MODIFICAR-TIPO SET: `+ error)
                 }
-                case '$push':
-                    try {
-                    console.log("push")
-                    return await this.colleccion.updateOne(elementoAnterior,{$push: elementoModificado})
+            break;
+            case '$push':
+                try {
+                    await this.colleccion.updateOne(elementoAnterior,{$push: elementoModificado})
                 } catch (error) {
                     logueoError(`Este es el error en MONGO-MODIFICAR-TIPO PUSH: `, error)
+                    throw (`Este es el error en MONGO-MODIFICAR-TIPO PUSH: `+ error)
                 }
-                default:
-                    try {
-                    console.log("default")
-                    return await this.colleccion.update(elementoAnterior,elementoModificado)
+            break;
+            default:
+                try {
+                    await this.colleccion.update(elementoAnterior,elementoModificado)
                 } catch (error) {
                     logueoError(`Este es el error en MONGO-MODIFICAR por DEFAULT: `, error)
+                    throw (`Este es el error en MONGO-MODIFICAR por DEFAULT: `+ error)
                 }
-                break;
+            break;
         }
-        
+        return `Elemento Modificado Correctamente` 
     }
 
     async eliminar(id){
         try {
-            let parametroBusqueda = {'_id' :id} 
+            let parametroBusqueda = {'_id' :id}  
             const datos= await this.colleccion.deleteOne(parametroBusqueda)
             return datos
         } catch (error) {
             logueoError(`Este es el error en MONGO-ELIMINAR: `, error)
+            throw (`Este es el error en MONGO-ELIMINAR: `+ error)
         }
     }
-
-
-
-
 }
 export default ContenedorMongoDb

@@ -1,25 +1,33 @@
 let carrito=[]
 
-const vaciarCarrito = async (email,idCarrito)=>{
-    console.log(email)
+const vaciarCarrito = async (email,idCarrito, compraOk)=>{
     localStorage.removeItem(email)
     idCarrito = await fetch(`/api/carritos/${idCarrito}`,{
         method: 'DELETE'
-    })
+    })     
+    if(compraOk) alert('COMPRASTE EL CARRITO, FELICITACIONES!!!')
     irAlCarrito()
 }
 
-const irAlCarrito= async (email)=>{
-  console.log('EN CARRITO JS')
+const comprarCarrito = async (email,nombreCompleto, telefono)=>{
+  let idCarrito= localStorage[email] 
+  const response = await fetch(`/api/ordenes/${email}`,{
+    method: 'POST',
+    body: JSON.stringify({carrito:carrito,nombreCompleto,telefono}),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  vaciarCarrito(email, idCarrito, true)
+}
+
+const irAlCarrito= async (email, nombreCompleto, telefono)=>{
   let tabla
-  let idCarrito= localStorage[email]
-  console.log(idCarrito)
+  let idCarrito= localStorage[email] 
   if(idCarrito){
     carrito = await fetch(`/api/carritos/${idCarrito}/productos`)
     carrito = await (carrito.json())
   }
-  console.log(carrito.length)
-  console.log(carrito)
   if (!carrito.length||!idCarrito) {
       let main= document.getElementById('centroMensajes')
       main.classList.remove('flexRow','flexContent')
@@ -32,9 +40,9 @@ const irAlCarrito= async (email)=>{
       `
   } else {
       let valorCarrito= 0
+      carrito.sort()
       let filasProductos = carrito.map((product)=>{
-          product.cantidad=1
-          valorCarrito = valorCarrito + Number(product.precio.toFixed(2))
+          valorCarrito = valorCarrito + (Number(product.precio.toFixed(2))*Number(product.cantidad))
           return (`
           <tr class='trCart' key= '${product._id}'>
               <td>
@@ -44,14 +52,14 @@ const irAlCarrito= async (email)=>{
               <td>${product.precio.toFixed(2)}</td>
               <td class='botonCart'>
               <div class='flexRow contentCenter'>
-                  <button onclick='return quitar("${product._id}",${product.precio})'>-</button>
+                  <button onclick='return restar("${product._id}",${product.precio},"${email}","${nombreCompleto}","${telefono}")'>-</button>
                   <p style='margin: 0 5px;' id='${product._id}'>${product.cantidad}</p> 
-                  <button  onclick='return sumar("${product._id}",${product.precio})'>+</button>
+                  <button  onclick='return sumar("${product._id}",${product.precio},"${email}","${nombreCompleto}","${telefono}")'>+</button>
               </div>
               </td>
               <td id='tr${product._id}'>${(product.cantidad*product.precio).toFixed(2)}</td>
               <td>
-              <button value=${product._id} class='cesto boton' onclick='return removeItem("${product._id}","${email}")'>
+              <button value=${product._id} class='cesto boton' onclick='return removeItem("${product._id}","${email}","removerItem","${nombreCompleto}","${telefono}")'>
                   <img class='cesto' src= '../img/icons/cesto.png' alt='Eliminar'/>
                   <span class='displayNone'>Eliminar</span>
               </button>
@@ -84,52 +92,49 @@ const irAlCarrito= async (email)=>{
         </table>
         <a class="boton" href="/centroMensajes">Ir a Centro de Mensajes</a>
         <a class="boton" onclick='return vaciarCarrito("${email}","${idCarrito}")'>Vaciar Carrito</a>
+        <a class="boton" onclick='return comprarCarrito("${email}","${nombreCompleto}", "${telefono}")'>Comprar Carrito</a>
       </div>
     `
   } 
   document.getElementById('centroMensajes').innerHTML=tabla
+
 }
-const quitar = (id, precio) => {
+const restar = async (id, precio, email, nombreCompleto,telefono) => {
+  await removeItem(id, email,'restarUnidad', nombreCompleto,telefono)
   let p = document.getElementById(id)
   let pParseado = Number(p.innerHTML)
 
   if (!(pParseado<=1)) {
     p.innerHTML= (Number(p.innerHTML)) - 1
+
     let trSubtotal = document.getElementById(`tr${id}`)
     trSubtotal.innerHTML= ((Number(precio)) *  p.innerHTML).toFixed(2)
-    carroTotal(p.innerHTML)
+    carroTotal()
   }
 }
-const sumar = (id, precio) => {
+const sumar = async (id, precio, email, nombreCompleto,telefono) => {
+  await agregarAlCarrito(id, email)
+  irAlCarrito(email,nombreCompleto,telefono)
   let p = document.getElementById(id)
   p.innerHTML= (Number(p.innerHTML)) + 1
   let trSubtotal = document.getElementById(`tr${id}`)
   trSubtotal.innerHTML= ((Number(precio)) *  p.innerHTML).toFixed(2)
-  carroTotal(p.innerHTML)
+  carroTotal()
 }
-const carroTotal = (cant) =>{
-  console.log(cant)
+const carroTotal = () =>{
   let valorCarrito= 0
   let spanCarrito = document.getElementById('valorCarritoTotal')
-  let total = carrito.forEach(p => {
+  carrito.forEach(p => {
     let trSubtotal = document.getElementById(`tr${p._id}`).innerHTML
-    console.log(trSubtotal)
     valorCarrito = valorCarrito + Number(trSubtotal)
-    
-    console.log(valorCarrito)
   })
-  console.log('total')
-  console.log(valorCarrito)
-  console.log('total')
   spanCarrito.innerHTML= `Total valor del carrito ${valorCarrito.toFixed(2)}`
-  console.log(spanCarrito.innerHTML)
 }
 //----------------------------------------------------------------------------
-const removeItem = async (id, email)=>{
+const removeItem= async (id, email, eliminar,nombreCompleto,telefono)=>{
   let idCarrito= localStorage[email]
-  let response = await fetch(`/api/carritos/${idCarrito}/productos/${id}`,{
+  await fetch(`/api/carritos/${idCarrito}/productos/${id}/${eliminar}`,{
     method: 'DELETE'
   })
-  irAlCarrito(email)
-
+  irAlCarrito(email,nombreCompleto,telefono)
 }

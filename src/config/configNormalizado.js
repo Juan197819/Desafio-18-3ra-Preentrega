@@ -19,12 +19,10 @@ const normalizado= (arrayMensajes)=>{
     const grupoMensajes = new schema.Entity('chats',{
         mensajes: [mensaje]
     })
-    console.log('DATA NORMAL')
-    console.log(JSON.stringify(chatConIds).length)
+    console.log('DATA NORMAL: '+ JSON.stringify(chatConIds).length)
     
     const mensajesNormalizados= normalize (chatConIds,grupoMensajes)
-    console.log('DATA normalizada')
-    console.log(JSON.stringify(mensajesNormalizados).length)
+    console.log('DATA Normalizada: '+JSON.stringify(mensajesNormalizados).length)
  
     return mensajesNormalizados
   }

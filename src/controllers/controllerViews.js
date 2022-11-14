@@ -2,7 +2,6 @@ import {daoUsuario} from '../index.js'
 import { logueoError } from '../config/confWinston.js'
 
 function calcularEdad(fecha) {     
-  //console.log(fecha)
   let hoy = new Date();
   let cumpleanos = new Date(fecha);
   let edad = hoy.getFullYear() - cumpleanos.getFullYear();
@@ -10,7 +9,6 @@ function calcularEdad(fecha) {
   if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
     edad--;
   }
-  //console.log(edad)
   return edad;
 }
 const getRegister = (req, res) => {
@@ -46,14 +44,14 @@ const getCentroMensajes = async (req, res) => {
 if(!req.session.user){
   req.session.user=req.user
 }
-  console.log('req.session');
   const [user] = await daoUsuario.leer({username: req.session.user})
   const usuario = {
     nombre: user.nombre.toUpperCase(),
     urlImagen:user.urlImagen, 
     edad: calcularEdad(user.fechaNacimiento),
     apellido: user.apellido.toUpperCase(), 
-    email:user.username  
+    email:user.username, 
+    telefono:user.telefono, 
   }
   let perfilExist= req.url
   if (perfilExist=='/centroMensajes/perfil') {

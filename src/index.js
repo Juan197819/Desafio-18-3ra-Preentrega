@@ -2,7 +2,7 @@ import {PERSISTENCIA} from './config/configEntorno.js'
 import ContenedorMongoDb from './contenedores/contenedorMongoDB.js'
 import ContenedorFirebase from './contenedores/contenedorFirebase.js'
 
-let daoCarrito,daoProducto,daoMensaje,daoUsuario
+let daoCarrito,daoProducto,daoMensaje,daoUsuario,daoOrden
 console.log(`Persistencia elegida via archivo .env:  ${PERSISTENCIA}`)
 
 switch (PERSISTENCIA) {
@@ -11,12 +11,14 @@ switch (PERSISTENCIA) {
         const {default: DaoCarritosMongo} = await import('./daos/carritos/carritosDaoMongoDB.js')    
         const {default: DaoMensajesMongo} = await import('./daos/mensajes/mensajesDaoMongoDB.js')    
         const {default: DaoUsuariosMongo} = await import('./daos/usuarios/usuariosDaoMongoDB.js')    
+        const {default: DaoOrdenesMongo} = await import('./daos/ordenes/ordenesDaoMongoDB.js')    
         
         ContenedorMongoDb.iniciarPersistencia()
         daoProducto= new DaoProductosMongo() 
         daoCarrito = new DaoCarritosMongo()
         daoMensaje = new DaoMensajesMongo()
         daoUsuario = new DaoUsuariosMongo()
+        daoOrden = new DaoOrdenesMongo()
     break;
 
     case 'firebase':
@@ -36,4 +38,4 @@ switch (PERSISTENCIA) {
         break;
 }
 
-export {daoProducto,daoCarrito,daoMensaje, daoUsuario}
+export {daoProducto,daoCarrito,daoMensaje, daoUsuario,daoOrden}

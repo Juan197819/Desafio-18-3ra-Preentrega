@@ -124,12 +124,10 @@ table,th,td, tr{
     border: 1px solid black;
     background-color: whitesmoke;
     padding: 10px;
-
 }
 table{
     border-collapse:collapse;
     margin: 30px auto;
-    background-color: whitesmoke;
 }
 li{
     font-size: 13px;
