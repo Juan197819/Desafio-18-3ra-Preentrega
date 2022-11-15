@@ -1,12 +1,12 @@
-import ServiceProductos from '../services/serviceCarritos.js'
-
+import ServiceProductos from '../services/serviceProductos.js'
+const newServiceProductos = new ServiceProductos()
 
 import {daoProducto } from '../index.js';
 
 const getProductos = async (req, res) => {
     try { 
-        const id= req.params.id;
-        let resultado = await daoProducto.leer(id)
+        const filtroBusqueda= req.params.id;
+        let resultado = await newServiceProductos.serviceGetProductos(filtroBusqueda)
 
         if (!resultado.length) {
             res.json("Producto no existente")
@@ -21,9 +21,8 @@ const getProductos = async (req, res) => {
 const postProductos = async (req, res) => {
     try {
         let producto = req.body
-        producto.timestamp= Date.now()
-        prod = await daoProducto.guardar(producto)
-        res.json('Producto Creado Exitosamente')
+        const productoCreado= await newServiceProductos.servicePostProductos(producto)
+        res.json(productoCreado)
     } catch (error) {
         console.log(error)
         res.json(error)
@@ -32,15 +31,9 @@ const postProductos = async (req, res) => {
 const putProductos = async (req, res) => {
     try {
         const id = req.params.id;
-        let isExist = await daoProducto.leer(id)
-        if (!isExist.length) {
-            res.json("Producto no existente (metodo PUT)")
-        }else{
-            const newProduct= req.body
-            newProduct.timestamp= Date.now()
-            const productoModificado = await daoProducto.modificar(...isExist,newProduct,'$set')
-            res.json('Producto Modificado Exitosamente')
-        }
+        const actualizacionProducto= req.body
+        const productoNuevo= await newServiceProductos.servicePutProductos(id, actualizacionProducto)  
+        res.json('Producto Modificado Exitosamente' + productoNuevo)
     } catch (error) {
         console.log(error)
         res.json(error)
@@ -49,17 +42,11 @@ const putProductos = async (req, res) => {
 const deleteProductos =async (req, res) => {
     try {  
         const id = req.params.id;
-        let isExist = await daoProducto.leer(id)
- 
-         if (!isExist.length) {
-             res.json("Producto no existente (metodo DELETE)")
-         } else {
-             const prod = await daoProducto.eliminar(id)
-             res.json('Producto Eliminado Exitosamente')
-         }
+        let resp = await newServiceProductos.serviceDeleteProductos(id)
+        res.json('Producto Eliminado Exitosamente' + resp)
     } catch (error) {
-     console.log(error)
-     res.json(error)
+        console.log(error)
+        res.json(error)
     }
  }
 

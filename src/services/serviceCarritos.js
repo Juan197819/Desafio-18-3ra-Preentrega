@@ -43,14 +43,14 @@ class ServiceCarritos {
             throw ('Error obteniendo productos del carrito: '+ error)
         }
     }
-    async serviceGetCarrito(id){
+    async serviceGetCarritos(id){
         try {
             return await daoCarrito.leer(id)
         } catch (error) {
             throw ('Error creando carrito Nuevo: '+ error)
         }
     }
-    async servicePostCarrito () {
+    async servicePostCarritos () {
         const nuevoCarrito = {
             timestamp: Date.now(), 
             productos: [],
@@ -75,7 +75,7 @@ class ServiceCarritos {
             throw ('Error agregando producto a carrito: '+ error)
         }
     }
-    async serviceDeleteCarrito(id){
+    async serviceDeleteCarritos(id){
         try {
             const carritoEnUso= await daoCarrito.leer(id)
             if (!carritoEnUso.length) {
@@ -91,7 +91,7 @@ class ServiceCarritos {
             throw ('Error borrando carrito: '+ error)
         }    
     }
-    async serviceDeleteProductoCarrito (id, id_prod, cantidadEliminada) {
+    async serviceDeleteProductosCarrito (id, id_prod, cantidadEliminada) {
         try {
     
             let carritoActual= await daoCarrito.leer(id)

@@ -12,22 +12,22 @@ const getProductosCarrito = async (req, res) => {
         res.json( {error})
     }
 }
-const getCarrito = async(req, res) => {
+const getCarritos = async(req, res) => {
     try {
         const id = req.params.id
-        let carrito = await newServiceCarrito.serviceGetCarrito(id)
+        let carrito = await newServiceCarrito.serviceGetCarritos(id)
         res.json(carrito)
     } catch (error) {
-        console.log('error getCarrito: ', error)
+        console.log('error getCarritos: ', error)
         res.json( {error})
     }
 }
-const postCarrito = async (req, res) => {
+const postCarritos = async (req, res) => {
     try {
-        const idNewCarrito = await newServiceCarrito.servicePostCarrito()
+        const idNewCarrito = await newServiceCarrito.servicePostCarritos()
         res.json(idNewCarrito)
     } catch (error) {
-        console.log('error postCarrito: ', error)
+        console.log('error postCarritos: ', error)
         res.json( {error})
     }
 }
@@ -43,27 +43,27 @@ const postProductosCarrito = async(req, res) => {
         res.json( {error})
     }
 }
-const deleteCarrito = async (req, res) => {
+const deleteCarritos = async (req, res) => {
     try {
         const id = req.params.id
-        const resp = await newServiceCarrito.serviceDeleteCarrito(id)
+        const resp = await newServiceCarrito.serviceDeleteCarritos(id)
         res.json(resp)
     } catch (error) {
-        console.log('error deleteCarrito: ', error)
+        console.log('error deleteCarritos: ', error)
         res.json( {error})
     }    
 }
-const deleteProductoCarrito = async(req, res) => {
+const deleteProductosCarrito = async(req, res) => {
     try {
         let id =req.params.id;
         let id_prod =req.params.id_prod;
         let cantidadEliminada =req.params.cantidadEliminada;
-        const resp = await newServiceCarrito.serviceDeleteProductoCarrito(id, id_prod, cantidadEliminada)
+        const resp = await newServiceCarrito.serviceDeleteProductosCarrito(id, id_prod, cantidadEliminada)
         res.json(resp)
     } catch (error) {
-        console.log('error deleteProductoCarrito: ', error)
+        console.log('error deleteProductosCarrito: ', error)
         res.json( {error})
     }
 }
 
-export {getProductosCarrito, getCarrito, postCarrito, postProductosCarrito, deleteCarrito, deleteProductoCarrito}
+export {getProductosCarrito, getCarritos, postCarritos, postProductosCarrito, deleteCarritos, deleteProductosCarrito}

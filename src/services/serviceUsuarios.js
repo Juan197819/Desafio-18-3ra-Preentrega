@@ -30,9 +30,6 @@ class ServiceUsuarios {
             let newData
             if (avatar) {
                 try {
-                    console.log(avatar);
-                    console.log(isExist);
-                    console.log(isExist[0].urlImagen);
                     await fs.promises.unlink(`./views/img/avatares/${isExist[0].urlImagen}`)
                     console.log('Avatar anterior BORRADO exitosamente');
                 } catch (error) {

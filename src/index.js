@@ -13,7 +13,7 @@ switch (PERSISTENCIA) {
         const {default: DaoUsuariosMongo} = await import('./daos/usuarios/usuariosDaoMongoDB.js')    
         const {default: DaoOrdenesMongo} = await import('./daos/ordenes/ordenesDaoMongoDB.js')    
         
-        ContenedorMongoDb.iniciarPersistencia()
+        await ContenedorMongoDb.iniciarPersistencia()
         daoProducto= new DaoProductosMongo() 
         daoCarrito = new DaoCarritosMongo()
         daoMensaje = new DaoMensajesMongo()
@@ -26,12 +26,14 @@ switch (PERSISTENCIA) {
         const {default: DaoCarritosFirebase} = await import('./daos/carritos/carritosDaoFirebase.js')
         const {default: DaoMensajesFirebase} = await import('./daos/mensajes/mensajesDaoFirebase.js')    
         const {default: DaoUsuariosFirebase} = await import('./daos/usuarios/usuariosDaoFirebase.js')    
+        const {default: DaoOrdenesFirebase} = await import('./daos/ordenes/ordenesDaoFirebase.js')    
         
        await ContenedorFirebase.iniciarPersistencia()
         daoProducto= new DaoProductosFirebase()
         daoCarrito = new DaoCarritosFirebase()
         daoMensaje = new DaoMensajesFirebase()
         daoUsuario = new DaoUsuariosFirebase()
+        daoOrden = new DaoOrdenesFirebase()
     break;
 
     default:

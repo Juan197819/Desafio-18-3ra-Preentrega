@@ -15,7 +15,7 @@ import {logueoWarning, logueoInfo, logueoError}from './src/config/confWinston.js
 import {PORT,arg} from './src/config/configEntorno.js'
 
 import routerProductos from './src/routes/routerProductos.js'
-import routerCarrito from './src/routes/routerCarrito.js'
+import routerCarritos from './src/routes/routerCarritos.js'
 import routerUsuarios from './src/routes/routerUsuarios.js'
 import routerOrdenes from './src/routes/routerOrdenes.js'
 import routerApiRandoms from './src/routes/routerApiRandoms.js'
@@ -59,7 +59,7 @@ passport.deserializeUser((username,done)=>{
 app.use('/api/randoms',routerApiRandoms)
 app.use('/api/productos', routerProductos)
 app.use('/api/usuarios', routerUsuarios)
-app.use('/api/carritos', routerCarrito)
+app.use('/api/carritos', routerCarritos)
 app.use('/api/ordenes', routerOrdenes)
 app.use('/register', routerRegister)
 app.use('/login', routerLogin)

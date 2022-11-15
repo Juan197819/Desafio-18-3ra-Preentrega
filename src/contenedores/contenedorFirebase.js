@@ -20,10 +20,12 @@ class ContenedorFirebase{
         }
     }
 
-    async leer(id){
+    async leer(ide){
         let tipoDeArgumento;
+        let id=ide
+        console.log(id);
         if(id){
-            if (id.length==20) {
+            if (id.length==20&& !id.includes('{')) {
                 tipoDeArgumento = 'ID'
                 console.log(tipoDeArgumento)
                 try {
@@ -37,11 +39,17 @@ class ContenedorFirebase{
                     logueoError(`Este es el error en FIREBASE-LEER-  con Argumento: ${tipoDeArgumento}`, error)
                 }
             }else{
+                console.log(typeof(id));
+                if (typeof(id)=='string' && id.includes('}')) {
+                    id= JSON.parse(id)
+                    console.log('SI OBJETO SEÑODA STRING');
+                }
                 tipoDeArgumento = 'OBJETO'
                 console.log(tipoDeArgumento)
                 try {
+                    console.log(id);
                     for (const key in id) {
-                        const documentos= await this.colleccion.where(`${key}`, '==', `${id[key]}`).get(id)
+                        const documentos= await this.colleccion.where(`${key}`, '==', id[key]).get(id)
                         const arraydocumentos= documentos.docs
                         const listaItem = arraydocumentos.map((e)=>{
                             return {_id: e.id,...(e.data())}
