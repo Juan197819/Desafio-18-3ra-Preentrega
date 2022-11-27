@@ -119,3 +119,10 @@ margin-top: 15px;
     left: -3px;
     cursor: pointer;
 }   
+.absolute{
+    position: absolute;
+}
+.derecha{
+    position: relative;
+    left: 50px;
+}

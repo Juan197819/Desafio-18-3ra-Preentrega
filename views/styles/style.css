@@ -151,6 +151,14 @@ li{
     justify-content:space-between;
     align-items:center;
 }
+.contentAround{
+    justify-content:space-around;
+    align-items:flex-start;
+
+}
+.contentBetween{
+    justify-content:space-between;
+}
 .positionRelative{
     width: 100%;
     position: relative;
@@ -183,6 +191,10 @@ li{
 button, input, label{
     margin:5px;
     height: 18px;
+    padding: 0px 0px 0px 4px;
+}
+textarea{
+    margin:5px;
     padding: 0px 0px 0px 4px;
 }
 button{
@@ -273,4 +285,32 @@ span{
 }
 .i{
     text-align: center;
+}
+#actualizarProducto{
+    position: relative;
+}
+.w100{
+    width: 100%;
+}
+.cerrarCuadro{
+    background-color: rgb(127, 255, 212);
+    top: 40px;
+    right: 50px;
+    padding: 8px;
+    font-size: 30px;
+    font-family: cursive;
+    cursor: pointer;
+}
+.fotoProducto{
+    display: block;
+    height: 50px;
+    width: 50px;
+}
+.cuadroProducto{
+    z-index: 2;
+    width: 470px;
+    margin: 0 auto;
+}
+.relative{
+    position: relative;
 }

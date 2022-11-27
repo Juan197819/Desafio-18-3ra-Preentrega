@@ -1,7 +1,15 @@
 let infoCard = document.getElementById('listaProductos')
 let filtro = document.getElementById('filtro')
+let cuadroProducto = document.getElementById('actualizarProducto')
+let centroMensajes = document.querySelector('div.centro')
+let enlaces = document.querySelector('.enlaces')
 let productosLista=''
-
+let cerrar, urlProducto, formProductos, formData
+//PRIMER RENDER DE PRODUCTOS
+if(infoCard){
+  let mailUsuario = document.querySelector('h3 span.ingresoMail').textContent  
+  agregarProductos(mailUsuario)
+}
 //FUNCION DE BOTON "LISTA DE PRODUCTOS" DE HOME
 async function agregarProductos (mail){
   await productosBD()
@@ -35,6 +43,8 @@ async function armarListado (mail){
           <p class="envio">Envio Gratis</p>
           <p class="stock">Stock: ${product.stock}</p>
           <button onclick='return agregarAlCarrito("${product._id}","${mail}")' >Agregar al carrito</button>
+          <button onclick='return actualizarProducto("${product._id}","${mail}")' >Actualizar</button>
+          <button onclick='return eliminarProducto("${product._id}","${mail}")' >Eliminar</button>
         </div>
       `)
     })
@@ -43,7 +53,7 @@ async function armarListado (mail){
     document.getElementById('msj').classList.remove('w800')
   } catch (error) {
     console.log('ERROR AGREGANDO PRODUCTOS')
-    console.log(error)
+    throw (new Error (error))
   }
 }
 // ARMADO DE VISTA DE PRODUCTOS SEGUN FILTRO 
@@ -64,29 +74,104 @@ function ocultarProductos (e){
   filtro.innerHTML = ("")
   document.getElementById('msj').classList.add('w800')
 }
-//AGREGO PRODUCTO AL CARRITO
-const agregarAlCarrito= async (id, email)=>{
-  //COMPRUEBO SI HAY UN ID DE CARRITO GUARDADO EN STORAGE
-  let idCarrito= localStorage[email]
+function cerrarActualizacionProductos () {
+  cuadroProducto.innerHTML = ``
+  infoCard.classList.remove('fondoOpaco')
+  filtro.classList.remove('fondoOpaco')
+  enlaces.classList.remove('fondoOpaco')
+  centroMensajes.classList.remove('fondoOpaco')
+}
 
-  //SI NO HAY ID DE CARRITO HAGO UN POST PARA CREAR UN CARRITO NUEVO  
-  if (!idCarrito) {
-    idCarrito = await fetch("/api/carritos/",{
-      method: 'POST'
-    })
-    idCarrito = await idCarrito.json()
+async function actualizarProducto (idProducto, mail){
+  let response =  await fetch(`/api/productos/${idProducto}`)
+  let [producto] =  await response.json()
 
-    // ASOCIO ID DE CARRITO AL MAIL PARA GUARDAR EN 
-    //STORAGE Y QUE EL CARRITO PERSISTA EN CADA INICIO DE SESION 
-    localStorage[email]= idCarrito
-    console.log('carrito nuevo creado')
-  }
-  const response = await fetch(`/api/carritos/${id}/productos`, {
-    method: 'POST',
-    body: JSON.stringify({idCarrito}),
-    headers: {
-      'Content-Type': 'application/json'
+  function cargaImagen(e,fotoProducto, formProductos) {
+     let formData = new FormData(formProductos)            
+    if((fotoProducto.value)){
+      const blob = formData.get('foto')
+      const file = URL.createObjectURL(blob)
+      document.querySelector("#divProd").innerHTML=  `
+      <label for="imagenProducto">Imagen de Producto</label>
+      <img class="fotoProducto" src="${file}" alt='Foto de ${producto.nombre}'>`
     }
+  }
+  cuadroProducto.innerHTML =`
+  <div class="absolute flexCol w100 contentBetween usuario">
+    <div class=" flexRow contentCenter w100">
+      <h1 class="">Actualizacion de Producto</h1>
+      <p class='cerrarCuadro'> X </p>
+    </div>
+    <form id='formProductos' style='width:100%;' class='flexCol contentAround'>
+      <div class=" flexRow contentCenter w100">
+        <label for="nombre">Nombre de Producto</label>
+        <input type="text" required name="nombre" value="${producto.nombre}"/>
+      </div>
+      <div class=" flexRow contentCenter w100">
+        <label for="descripcion">Descripcion</label>
+        <textarea type="text" cols='30' rows='10' required name="descripcion">${producto.descripcion}</textarea>
+      </div>
+      <div class=" flexRow contentCenter w100">
+        <label for="codigo">Codigo de Producto</label>
+        <input type="text" required name="codigo" value="${producto.codigo}"/>
+      </div>
+      <div class="flexRow contentCenter w100">
+        <label for="precio">Precio</label>
+        <input type="number" required name="precio" value="${producto.precio}"/>
+      </div>
+      <div class="flexRow contentCenter w100">
+        <label for="stock">Stock</label>
+        <input type="number" required name="stock" value="${producto.stock}"/>
+      </div>
+      <div id='divProd' class="flexRow flexContent w100">
+        <label for="foto">Imagen de Producto</label>
+        <img class='fotoProducto' alt='Foto de ${producto.nombre}' src='${producto.foto}'>
+      </div>
+      <input id='fotoProducto' type="file" name="foto"/>
+      <button style='margin: 10px auto;'>Actualizar</button>
+    </form>
+  </div>   
+  `
+  infoCard.classList.add('fondoOpaco')
+  filtro.classList.add('fondoOpaco')
+  enlaces.classList.add('fondoOpaco')
+  centroMensajes.classList.add('fondoOpaco')
+
+  
+  let formProductos = document.querySelector("#formProductos");
+  formProductos.addEventListener('submit', (e) =>actualizacionProducto(e,idProducto,formProductos,producto.foto))
+  
+  urlProducto= document.querySelector('#fotoProducto')
+  urlProducto.addEventListener('change', (e) =>cargaImagen(e,urlProducto, formProductos))
+  
+  cerrar= document.querySelector('.cerrarCuadro')
+  cerrar.addEventListener('click',cerrarActualizacionProductos)
+
+}
+
+async function actualizacionProducto (e, idProducto, formProductos, mail){
+  let formData = new FormData(formProductos)            
+
+  try {
+    e.preventDefault()
+    console.log(idProducto);
+    console.log(formData);
+    await fetch(`/api/productos/${idProducto}`,{
+         method: 'PUT',
+         body: formData,
+     })
+ } catch (error) {
+     throw (error)
+ }
+cerrarActualizacionProductos()
+await agregarProductos(mail)
+}
+async function eliminarProducto (idProducto, mail){
+  const resp=await fetch(`/api/productos/${idProducto}`,{
+    method: 'DELETE'
   })
-  console.log(await response.json())
+  const respParse =await resp.json()
+  console.log(respParse);
+  alert(JSON.stringify(respParse))
+  await agregarProductos(mail)
 }

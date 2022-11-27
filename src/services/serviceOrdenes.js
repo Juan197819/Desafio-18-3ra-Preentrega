@@ -5,12 +5,12 @@ import envioMensaje from '../config/configMensaje.js'
 
 class ServiceOrdenes {
 
-    async serviceGetOrdenes(filtroUsuario){
-        // try {
-        //     return await daoOrden.leer(filtroUsuario)
-        // } catch (error) {
-        //     throw ('Error obteniendo Usuario/s: '+ error)
-        // }
+    async serviceGetOrdenes(filtroOrden){
+        try {
+            return await daoOrden.leer(filtroOrden)
+        } catch (error) {
+            throw ('Error obteniendo Orden/es: '+ error)
+        }
     }
     async servicePostOrdenes (ordenProductos, emailComprador) {
         try {
@@ -38,7 +38,7 @@ class ServiceOrdenes {
         // try {
         //     if (!id) throw ("Se requiere ID de usuario para modificarlo")
         //     let isExist = await daoOrden.leer(id)
-        //     if (!isExist.length) throw ("Usuario no existente")
+        //     if (!isExist.length) throw ("Orden no existente")
         //     let newData
         //     if (avatar) {
         //         try {
@@ -60,21 +60,21 @@ class ServiceOrdenes {
         //     await daoOrden.modificar(...isExist, newData,'$set')
         //     return(newData)
         // } catch (error) {
-        //     throw ('Error modificando Usuario: '+ error)
+        //     throw ('Error modificando Orden: '+ error)
         // }
     }
     async serviceDeleteOrdenes(id){
-        // try {  
-        //     let isExist = await daoOrden.leer(id)
-        //     if (!isExist.length) {
-        //         throw("Usuario no existente")
-        //     } else {
-        //         const prod = await daoOrden.eliminar(id)
-        //         return ('Usuario Eliminado Exitosamente' + prod)
-        //     }
-        // } catch (error) {
-        //     throw ('Error Eliminando Usuario: '+ error)
-        // }
+        try {  
+            let isExist = await daoOrden.leer(id)
+            if (!isExist.length) {
+                throw("Orden no existente")
+            } else {
+                const prod = await daoOrden.eliminar(id)
+                return ('Orden Eliminado Exitosamente' + prod)
+            }
+        } catch (error) {
+            throw ('Error Eliminando Orden: '+ error)
+        }
      }
     }
 export default ServiceOrdenes 

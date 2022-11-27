@@ -4,7 +4,7 @@ const mostrarSaludo= ()=>{
   let despedida= `Hasta Luego `;
 
   document.getElementById('saludo').innerHTML=despedida
-  document.getElementById('centroMensajes').remove()
+  document.getElementById('home').remove()
   document.getElementById('form')&&document.getElementById('form').remove()
   document.getElementById('divid').remove()
   return

@@ -20,7 +20,6 @@ import routerUsuarios from './src/routes/routerUsuarios.js'
 import routerOrdenes from './src/routes/routerOrdenes.js'
 import routerApiRandoms from './src/routes/routerApiRandoms.js'
 
-
 import {routerRegister, routerLogin, routerLogout, routerHome} from './src/routes/routerViews.js'
 import auth from './src/routes/middleware/auth.js'
 
@@ -64,13 +63,8 @@ app.use('/api/ordenes', routerOrdenes)
 app.use('/register', routerRegister)
 app.use('/login', routerLogin)
 app.use('/logout', routerLogout)
-app.use('/', routerHome)
 
-const errorRuta= {error: -2, descripcion: `ruta no implementada`}
 
-app.all('*', logueoWarning,(req,res)=>{
-  res.json(errorRuta)
-  })
 
 const info ={
   argumentos: JSON.stringify(arg),
@@ -94,6 +88,8 @@ app.get('/api/productos-test',auth, logueoInfo,(req, res) => {
   let tablaProductos=lista()
   res.render("tablaAleatoria", {tablaProductos});
 })
+app.use('/', routerHome)
+
 
 //------------------WEBSOCKETS------------------------------
 
@@ -119,7 +115,11 @@ io.on("connection", (socket) => {
 });
 
 //-------------RUTAS POR DEFAULT------------
+const errorRuta= {error: -2, descripcion: `ruta no implementada`}
 
+app.all('*', logueoWarning,(req,res)=>{
+  res.json(errorRuta)
+  })
 
 //---------------SERVER LISTEN------------------------------
 

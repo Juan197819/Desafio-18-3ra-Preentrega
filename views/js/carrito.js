@@ -1,5 +1,30 @@
 let carrito=[]
+//AGREGO PRODUCTO AL CARRITO
+const agregarAlCarrito= async (id, email)=>{
+  //COMPRUEBO SI HAY UN ID DE CARRITO GUARDADO EN STORAGE
+  let idCarrito= localStorage[email]
 
+  //SI NO HAY ID DE CARRITO HAGO UN POST PARA CREAR UN CARRITO NUEVO  
+  if (!idCarrito) {
+    idCarrito = await fetch("/api/carritos/",{
+      method: 'POST'
+    })
+    idCarrito = await idCarrito.json()
+
+    // ASOCIO ID DE CARRITO AL MAIL PARA GUARDAR EN 
+    //STORAGE Y QUE EL CARRITO PERSISTA EN CADA INICIO DE SESION 
+    localStorage[email]= idCarrito
+    console.log('carrito nuevo creado')
+  }
+  const response = await fetch(`/api/carritos/${id}/productos`, {
+    method: 'POST',
+    body: JSON.stringify({idCarrito}),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  console.log(await response.json())
+}
 const vaciarCarrito = async (email,idCarrito, compraOk)=>{
     localStorage.removeItem(email)
     idCarrito = await fetch(`/api/carritos/${idCarrito}`,{
@@ -29,13 +54,13 @@ const irAlCarrito= async (email, nombreCompleto, telefono)=>{
     carrito = await (carrito.json())
   }
   if (!carrito.length||!idCarrito) {
-      let main= document.getElementById('centroMensajes')
+      let main= document.getElementById('home')
       main.classList.remove('flexRow','flexContent')
       main.classList.add('flexCol','contentCenter')
       tabla=`
       <div class='flexCol contentCenter'>
           <h1 class='carroVacio'>No hay productos en el carrito</h1>
-          <a class="boton" href="/centroMensajes">Volver a Centro de Mensajes</a>
+          <a class="boton" href="/home">Volver a Centro de Mensajes</a>
       </div>
       `
   } else {
@@ -90,13 +115,13 @@ const irAlCarrito= async (email, nombreCompleto, telefono)=>{
             </tr>
           </tfoot>
         </table>
-        <a class="boton" href="/centroMensajes">Ir a Centro de Mensajes</a>
+        <a class="boton" href="/home">Ir a Centro de Mensajes</a>
         <a class="boton" onclick='return vaciarCarrito("${email}","${idCarrito}")'>Vaciar Carrito</a>
         <a class="boton" onclick='return comprarCarrito("${email}","${nombreCompleto}", "${telefono}")'>Comprar Carrito</a>
       </div>
     `
   } 
-  document.getElementById('centroMensajes').innerHTML=tabla
+  document.getElementById('home').innerHTML=tabla
 
 }
 const restar = async (id, precio, email, nombreCompleto,telefono) => {

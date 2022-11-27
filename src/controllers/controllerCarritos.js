@@ -15,8 +15,12 @@ const getProductosCarrito = async (req, res) => {
 const getCarritos = async(req, res) => {
     try {
         const id = req.params.id
-        let carrito = await newServiceCarrito.serviceGetCarritos(id)
-        res.json(carrito)
+        let carritos = await newServiceCarrito.serviceGetCarritos(id)
+        if (!carritos.length) {
+            res.json("Carrito no existente")
+        }else{
+            res.json(carritos);
+        }
     } catch (error) {
         console.log('error getCarritos: ', error)
         res.json( {error})

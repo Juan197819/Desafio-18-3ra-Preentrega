@@ -2,19 +2,19 @@ import ServiceOrdenes from '../services/serviceOrdenes.js'
 const newServiceOrdenes = new ServiceOrdenes()
 
 const getOrdenes = async (req, res) => {
-    // try { 
-    //     const id= req.params.id;
-    //     let resultado = await daoOrden.leer(id)
+    try { 
+        const id= req.params.id;
+        let ordenes = await newServiceOrdenes.serviceGetOrdenes(id)
+        if (!ordenes.length) {
+            res.json("Orden no existente")
+        }else{
+            res.json(ordenes);
+        }
+    } catch (error) {
+        console.log(error)
+        res.json( {error})
 
-    //     if (!resultado.length) {
-    //         res.json("Orden no existente")
-    //     }else{
-    //         res.json(resultado);
-    //     }
-    // } catch (error) {
-    //     console.log(error)
-    //     res.json(error)
-    // }
+    }
 }
 const postOrdenes = async (req, res) => {
     try {
@@ -22,7 +22,7 @@ const postOrdenes = async (req, res) => {
         let emailComprador = req.params.usuario
         const nuevoId= await newServiceOrdenes.servicePostOrdenes(orden, emailComprador)    
         console.log('Solicitud procesada, orden N°: ' + nuevoId)
-        res.redirect('/centroMensajes')
+        res.redirect('/home')
     } catch (error) {
         console.log('Error postUsuarios: ', error)
         res.json({error})
@@ -43,24 +43,20 @@ const putOrdenes = async (req, res) => {
     //     }
     // } catch (error) {
     //     console.log(error)
-    //     res.json(error)
+    //             res.json( {error})
+
     // }
 }
 const deleteOrdenes =async (req, res) => {
-    // try {  
-    //     const id = req.params.id;
-    //     let isExist = await daoOrden.leer(id)
- 
-    //      if (!isExist.length) {
-    //          res.json("Orden no existente (metodo DELETE)")
-    //      } else {
-    //          const prod = await daoOrden.eliminar(id)
-    //          res.json('Orden Eliminado Exitosamente')
-    //      }
-    // } catch (error) {
-    //  console.log(error)
-    //  res.json(error)
-    // }
+    try {  
+        const id = req.params.id;
+        let response = await newServiceOrdenes.serviceDeleteOrdenes(id)
+        res.json(response)
+    } catch (error) {
+        console.log(error)
+        res.json( {error})
+
+    }
  }
 
 export {getOrdenes, postOrdenes, putOrdenes, deleteOrdenes}

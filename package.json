@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon servidorHBS.js",
-    "oir":"set PERSISTENCIA=firebase && node servidorHBS.js"
+    "oir":"set PERSISTENCIA2=firebase && node servidorHBS.js"
   },
   "keywords": [],
   "author": "",

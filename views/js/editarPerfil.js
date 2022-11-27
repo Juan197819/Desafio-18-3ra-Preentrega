@@ -34,8 +34,10 @@ async function guardarPerfil(e, id){
     return false
 }
 
-async function editarImagen (imagen, id){
+async function editarImagen (e,imagen, id){
     let formData 
+    console.log('e.target.value')
+    console.log(e.target.value)
     if((imagen.value)){
         //ACTUALIZACION AUTOMATICA DE AVATAR EN HEADER 
         let form = document.querySelector("#form");

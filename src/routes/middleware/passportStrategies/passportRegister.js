@@ -1,15 +1,21 @@
 import passport from 'passport';
 import fs from 'fs'
 import {Strategy as LocalStrategy} from 'passport-local';
-import {daoUsuario } from '../../../index.js';
 import {logueoError} from '../../../config/confWinston.js';
+import ServiceUsuarios from '../../../services/serviceUsuarios.js'
+
+const newServiceUsuario = new ServiceUsuarios()
 
 passport.use('register', new LocalStrategy({
     passReqToCallback:true
     }, async (req,username,password,done)=>{
     let user;
+    if(req.body.password2!==password){
+      console.log('ERROR LA CONTRASEÑA NO COINCIDE');
+      return done(null, false)
+    }
     try {
-      [user] = await daoUsuario.leer({username}) 
+      [user] = await newServiceUsuario.serviceGetUsuarios({username}) 
       console.log(`Lectura de registros correcta`)
     } catch (error) {
       logueoError(`Este es el error al leer registros de BD: ` , error)

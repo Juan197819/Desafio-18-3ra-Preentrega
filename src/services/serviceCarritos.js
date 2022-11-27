@@ -1,5 +1,5 @@
 import {daoCarrito, daoProducto } from '../index.js';
-import productoDto from '../dtos/productoDto.js';
+import productoCarritoDto from '../dtos/productoCarritoDto.js';
 
 class ServiceCarritos {
     constructor(){
@@ -27,7 +27,7 @@ class ServiceCarritos {
                     const id = p._id
                     if ( !o[id] ) {
                         o[id] = p._id
-                        let newProduct=productoDto(p)
+                        let newProduct=productoCarritoDto(p)
                         datoCarrito.push(newProduct)
                     }else{
                         datoCarrito.forEach(p => {

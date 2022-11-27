@@ -6,7 +6,6 @@ class ContenedorMongoDb{
     constructor(nombreColleccion, Schema){
         this.colleccion = mongoose.model(nombreColleccion, Schema)
     }
-
     static async iniciarPersistencia(){
         try {
             let url;
@@ -24,15 +23,18 @@ class ContenedorMongoDb{
             throw ('Error en la conexion de MongoDB: ' + error)
         }
     }
-
     async leer(id){
         let parametroBusqueda = {}
         let tipoDeArgumento;
         if(id){
-            if (id.length==24) {
+            if (id.length==24&& !id.includes('{')) {
                 tipoDeArgumento = 'ID'
                 parametroBusqueda = {'_id' :id}  
             }else{
+                if (typeof(id)=='string' && id.includes('}')) {
+                    id= JSON.parse(id)
+                    console.log('SI OBJETO SEÑODA STRING');
+                }
                 tipoDeArgumento = 'OBJETO'
                 parametroBusqueda=id
             }
@@ -40,11 +42,13 @@ class ContenedorMongoDb{
             tipoDeArgumento = 'VACIO'
         }
         try {
+            console.log(tipoDeArgumento);
+            console.log(id);
             const datos= await this.colleccion.find(parametroBusqueda, {__v:0})
             return datos
         } catch (error) {
-            logueoError(`Este es el error en MONGO-LEER con Argumento: ${tipoDeArgumento}`, error)
-            throw (`Este es el error en MONGO-LEER con Argumento: ${tipoDeArgumento}`+ error)
+            logueoError(`Este es el error en MONGO-LEER con Argumento: ${tipoDeArgumento} `, error)
+            throw (`Este es el error en MONGO-LEER con Argumento: ${tipoDeArgumento} `+ error)
         }
     }
     async guardar(datos) {
@@ -57,40 +61,29 @@ class ContenedorMongoDb{
         }
     }
     async modificar(elementoAnterior, elementoModificado,tipoDeModificacion) {
-        switch (tipoDeModificacion) {
-            case '$set':
-                try {
-                    await this.colleccion.updateOne(elementoAnterior,{$set: elementoModificado})
-                } catch (error) {
-                    logueoError(`Este es el error en MONGO-MODIFICAR-TIPO SET: `, error)
-                    throw (`Este es el error en MONGO-MODIFICAR-TIPO SET: `+ error)
-                }
-            break;
-            case '$push':
-                try {
-                    await this.colleccion.updateOne(elementoAnterior,{$push: elementoModificado})
-                } catch (error) {
-                    logueoError(`Este es el error en MONGO-MODIFICAR-TIPO PUSH: `, error)
-                    throw (`Este es el error en MONGO-MODIFICAR-TIPO PUSH: `+ error)
-                }
-            break;
-            default:
-                try {
-                    await this.colleccion.update(elementoAnterior,elementoModificado)
-                } catch (error) {
-                    logueoError(`Este es el error en MONGO-MODIFICAR por DEFAULT: `, error)
-                    throw (`Este es el error en MONGO-MODIFICAR por DEFAULT: `+ error)
-                }
-            break;
+        try {
+            switch (tipoDeModificacion) {
+                case '$set':
+                        await this.colleccion.updateOne(elementoAnterior,{$set: elementoModificado})
+                    break;
+                case '$push':
+                        await this.colleccion.updateOne(elementoAnterior,{$push: elementoModificado})
+                    break;
+                default:
+                        await this.colleccion.update(elementoAnterior,elementoModificado)
+                    break;
+            }
+            return `Elemento Modificado Correctamente` 
+        } catch (error) {
+            logueoError(`Este es el error en MONGO-MODIFICAR-TIPO ${tipoDeModificacion}: `, error)
+            throw (`Este es el error en MONGO-MODIFICAR-TIPO ${tipoDeModificacion}: `+ error)
         }
-        return `Elemento Modificado Correctamente` 
     }
-
     async eliminar(id){
         try {
             let parametroBusqueda = {'_id' :id}  
             const datos= await this.colleccion.deleteOne(parametroBusqueda)
-            return datos
+            return `Elemento Eliminado Correctamente` 
         } catch (error) {
             logueoError(`Este es el error en MONGO-ELIMINAR: `, error)
             throw (`Este es el error en MONGO-ELIMINAR: `+ error)

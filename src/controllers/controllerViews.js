@@ -1,16 +1,6 @@
-import {daoUsuario} from '../index.js'
+import {serviceViews} from '../services/serviceViews.js';
 import { logueoError } from '../config/confWinston.js'
 
-function calcularEdad(fecha) {     
-  let hoy = new Date();
-  let cumpleanos = new Date(fecha);
-  let edad = hoy.getFullYear() - cumpleanos.getFullYear();
-  let m = hoy.getMonth() - cumpleanos.getMonth();
-  if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
-    edad--;
-  }
-  return edad;
-}
 const getRegister = (req, res) => {
     res.render("register")
 }
@@ -19,7 +9,7 @@ const getRegisterError = (req, res) => {
 }
 const getLogin = (req, res) => {
   if (req.isAuthenticated()) {
-    res.redirect('/centroMensajes')
+    res.redirect('/home')
   }else{
     res.render("login")
   }
@@ -40,26 +30,19 @@ const getLogout = (req, res) => {
       console.log('Te deslogueaste con exito')
     })
 }
-const getCentroMensajes = async (req, res) => {
-if(!req.session.user){
-  req.session.user=req.user
-}
-  const [user] = await daoUsuario.leer({username: req.session.user})
-  const usuario = {
-    nombre: user.nombre.toUpperCase(),
-    urlImagen:user.urlImagen, 
-    edad: calcularEdad(user.fechaNacimiento),
-    apellido: user.apellido.toUpperCase(), 
-    email:user.username, 
-    telefono:user.telefono, 
-  }
+const getHome = async (req, res) => {
   let perfilExist= req.url
-  if (perfilExist=='/centroMensajes/perfil') {
+  if(!req.session.user){
+    req.session.user=req.user
+  }
+  let buscarUsuario= {username:req.session.user}
+  const vistaUsuario= await serviceViews(buscarUsuario)
+  if (perfilExist=='/home/perfil') {
     perfilExist = false
   } else {
     perfilExist = true
   }
-  res.render("centroMensajes",{...usuario,perfilExist});
+  res.render("home",{...vistaUsuario,perfilExist});
 }
 
-export {getRegister, getCentroMensajes, getRegisterError, getLogin, getLoginError, getLogout}
+export {getRegister, getHome, getRegisterError, getLogin, getLoginError, getLogout}

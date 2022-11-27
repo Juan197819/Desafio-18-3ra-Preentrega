@@ -8,7 +8,7 @@
     </div>
     <a class="btnLogout" href="/logout" id="boton" onclick="mostrarSaludo()">Desloguearse</a>
 </header>
-<main id="centroMensajes"  class="flexRow flexContent">
+<main id="home"  class="flexRow flexContent">
     {{#if perfilExist}}
             {{>principal}}
     {{else}}
@@ -20,3 +20,16 @@
         <p class="copyright">Todos los derechos Reservados &copy; | JUANBA Desarrolo Web</p>
     </div>
 </footer>
+    {{#if perfilExist}}
+        <script src="../js/mensajes.js"></script>
+        <script src="../js/productos.js"></script>
+        <script src="../js/carrito.js"></script>
+    {{else}}
+        <script src="../js/prefijosTel.js"></script>
+        <script src="../js/perfil.js"></script>
+        <script src="../js/editarPerfil.js"></script>
+    {{/if}}
+
+
+
+

@@ -1,17 +1,14 @@
 import ServiceProductos from '../services/serviceProductos.js'
 const newServiceProductos = new ServiceProductos()
 
-import {daoProducto } from '../index.js';
-
 const getProductos = async (req, res) => {
     try { 
         const filtroBusqueda= req.params.id;
-        let resultado = await newServiceProductos.serviceGetProductos(filtroBusqueda)
-
-        if (!resultado.length) {
+        let productos = await newServiceProductos.serviceGetProductos(filtroBusqueda)
+        if (!productos.length) {
             res.json("Producto no existente")
         }else{
-            res.json(resultado);
+            res.json(productos);
         }
     } catch (error) {
         console.log(error)
@@ -21,7 +18,8 @@ const getProductos = async (req, res) => {
 const postProductos = async (req, res) => {
     try {
         let producto = req.body
-        const productoCreado= await newServiceProductos.servicePostProductos(producto)
+        const urlImagen = req.file.filename
+        const productoCreado= await newServiceProductos.servicePostProductos(producto, urlImagen)
         res.json(productoCreado)
     } catch (error) {
         console.log(error)
@@ -32,8 +30,12 @@ const putProductos = async (req, res) => {
     try {
         const id = req.params.id;
         const actualizacionProducto= req.body
-        const productoNuevo= await newServiceProductos.servicePutProductos(id, actualizacionProducto)  
-        res.json('Producto Modificado Exitosamente' + productoNuevo)
+        console.log('req.file?.filename');
+        console.log(req.file?.filename);
+        console.log('req.file?.filename');
+        if (req.file) actualizacionProducto.foto = `../img/productos/${req.file.filename}`
+        const resp= await newServiceProductos.servicePutProductos(id, actualizacionProducto)  
+        res.json(resp)
     } catch (error) {
         console.log(error)
         res.json(error)
@@ -43,7 +45,7 @@ const deleteProductos =async (req, res) => {
     try {  
         const id = req.params.id;
         let resp = await newServiceProductos.serviceDeleteProductos(id)
-        res.json('Producto Eliminado Exitosamente' + resp)
+        res.json(`${resp}, id de producto eliminado: ${id}`)
     } catch (error) {
         console.log(error)
         res.json(error)

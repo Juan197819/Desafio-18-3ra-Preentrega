@@ -1,6 +1,6 @@
 <div class="flexCol contentCenter">
-  <div class="usuario H1Register  flexCol contentCenter">
-    <h1 class="H1Register">Ingrese sus datos para crear la cuenta</h1>
+  <div class="usuario flexCol contentCenter">
+    <h1 class="">Ingrese sus datos para crear la cuenta</h1>
     <form  class="flexCol" action="/api/usuarios" enctype="multipart/form-data" method="POST"/>
 
       <label for="nombre">Nombre</label>
@@ -31,8 +31,10 @@
       <label for="username">Email</label>
       <input type="email" required name="username" value="juanpablo88@hotmail.com"/>
 
-      <label for="password">Contrasenia</label>
-      <input type="password" name="password" value="1234" required/>
+      <label for="password">Contraseña</label>
+      <input id="password" type="password" name="password" value="1234" required/>
+      <label for="password2">Confirme Contraseña</label>
+      <input id="password2" type="password" name="password2" value="1234" required/>
 
       <button >Registrarse</button>
     </form>

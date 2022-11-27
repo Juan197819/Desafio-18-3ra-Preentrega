@@ -1,9 +1,9 @@
 let headerPerfil =  document.querySelector("header");
 let headerPerfilDiv =  document.querySelector("header .divTitulo");
 let fotoPerfil =  document.querySelector("header .avatarFoto");
-let perfil =  document.querySelector("#centroMensajes .perfil");
-let main =  document.querySelector("#centroMensajes");
-let lapiz =  document.querySelector("#centroMensajes .lapiz");
+let perfil =  document.querySelector("#home .perfil");
+let main =  document.querySelector("#home");
+let lapiz =  document.querySelector("#home .lapiz");
 
 //FUNCION PARA TRANSFORMAR FECHA DE NACIMIENTO INGRESADA EN EDAD ACTUAL
 function calcularEdad(fecha) {
@@ -42,7 +42,10 @@ async function newBody(){
     response =  await response.json()
     //LISTENER PARA ACTUALIZAR AVATAR
     let imagen = document.querySelector("#archivo");
-    imagen.addEventListener('change', () =>editarImagen(imagen, response[0]._id))
+
+    imagen.addEventListener('click', (e) =>console.log(e.target.value))
+    imagen.addEventListener('click', (e) =>console.log(e.target))
+    imagen.addEventListener('change', (e) =>editarImagen(e, imagen, response[0]._id))
 
     //INSERCION DE DATOS PERSONALES 
     const datosPerfil = `
@@ -81,14 +84,14 @@ let divEditarPerfil,salir
 async function editarPerfil (){
     let response =  await fetch(`/api/usuarios`)
     response =  await response.json()
-    divEditarPerfil =  document.querySelector("#centroMensajes .editarPerfil");
+    divEditarPerfil =  document.querySelector("#home .editarPerfil");
 
     //INSERCION DE CUADRO DE EDICION
     const insertarEdicion= `
     <div class="flexCol contentCenter">
     <p class='salir'> X </p>
-    <div class="usuario H1Register  flexCol contentCenter">
-        <h1 class="H1Register">Datos Personales</h1>
+    <div class="usuario   flexCol contentCenter">
+        <h1 class="">Datos Personales</h1>
         <form id='formEdicion' class="flexCol">
             <label for="nombre">Nombre</label>
             <input id='nombre' type="text" required name="nombre" value="${response[0].nombre}"/>

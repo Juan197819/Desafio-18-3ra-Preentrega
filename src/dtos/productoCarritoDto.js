@@ -1,4 +1,4 @@
-function productoDto(p){
+function productoCarritoDto(p){
     return {
         _id: p._id,
         nombre: p.nombre,
@@ -8,4 +8,4 @@ function productoDto(p){
         cantidad: 1
     }
 }
-export default productoDto
+export default productoCarritoDto

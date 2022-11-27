@@ -22,7 +22,7 @@ const postUsuarios = async (req, res) => {
         const urlImagen = req.file.filename
         const nuevoId= await newServiceUsuario.servicePostUsuarios(datosPersonales,urlImagen)    
         console.log('REGISTRO EXITOSO: ' + nuevoId)
-        res.redirect('/centroMensajes')
+        res.redirect('/home')
     } catch (error) {
         console.log('Error postUsuarios: ', error)
         res.json({error})

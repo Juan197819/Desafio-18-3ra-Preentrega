@@ -33,16 +33,13 @@ class ContenedorFirebase{
                     const item= await doc.get()
                     let it= item.data()
                     !it? it= [] : it= [{_id: item.id,...it}]
-
                     return it
                 } catch (error) {
                     logueoError(`Este es el error en FIREBASE-LEER-  con Argumento: ${tipoDeArgumento}`, error)
                 }
             }else{
-                console.log(typeof(id));
                 if (typeof(id)=='string' && id.includes('}')) {
                     id= JSON.parse(id)
-                    console.log('SI OBJETO SEÑODA STRING');
                 }
                 tipoDeArgumento = 'OBJETO'
                 console.log(tipoDeArgumento)
