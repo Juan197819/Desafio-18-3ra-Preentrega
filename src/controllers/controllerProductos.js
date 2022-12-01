@@ -30,11 +30,9 @@ const putProductos = async (req, res) => {
     try {
         const id = req.params.id;
         const actualizacionProducto= req.body
-        console.log('req.file?.filename');
-        console.log(req.file?.filename);
-        console.log('req.file?.filename');
         if (req.file) actualizacionProducto.foto = `../img/productos/${req.file.filename}`
-        const resp= await newServiceProductos.servicePutProductos(id, actualizacionProducto)  
+        const resp= await newServiceProductos.servicePutProductos(id, actualizacionProducto) 
+        console.log('Producto Modificado Exitosamente'); 
         res.json(resp)
     } catch (error) {
         console.log(error)

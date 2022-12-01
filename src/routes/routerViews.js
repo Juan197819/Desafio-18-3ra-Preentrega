@@ -1,7 +1,7 @@
 import { Router} from "express";
 import upload from "../routes/middleware/uploadAvatarImage.js";
 import {logueoInfo} from '../config/confWinston.js';
-import {getRegister, getHome, getRegisterError, getLogin, getLoginError, getLogout} from '../controllers/controllerViews.js'
+import {getRegister, getHome, getRegisterError, getLogin, getLoginError, getLogout, getInfo} from '../controllers/controllerViews.js'
 import passportAuthRegister from "./middleware/passportStrategies/passportRegister.js";
 import passportAuthLogin from "./middleware/passportStrategies/passportLogin.js";
 import auth from "./middleware/auth.js" 
@@ -18,6 +18,7 @@ routerLogin.get('/', logueoInfo, getLogin)
 routerLogin.post('/',logueoInfo, passportAuthLogin )  
 routerLogin.get('/error', logueoInfo, getLoginError) 
 
+routerHome.get('/info', auth,  logueoInfo, getInfo)
 routerHome.get('/:home?/:perfil?', auth,  logueoInfo, getHome)
 
 routerLogout.get('/', auth, logueoInfo, getLogout) 

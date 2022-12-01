@@ -10,9 +10,13 @@
 </header>
 <main id="home"  class="flexRow flexContent">
     {{#if perfilExist}}
-            {{>principal}}
+        {{>principal}}
     {{else}}
+        {{#if crearProd}}
+            {{>crearProducto}}
+        {{else}}
             {{>perfil}}
+        {{/if}}
     {{/if}}
 </main>
 <footer class="flexCol">
@@ -25,11 +29,13 @@
         <script src="../js/productos.js"></script>
         <script src="../js/carrito.js"></script>
     {{else}}
-        <script src="../js/prefijosTel.js"></script>
-        <script src="../js/perfil.js"></script>
-        <script src="../js/editarPerfil.js"></script>
+        {{#if crearProd}}
+            <script src="../js/productos.js"></script>
+        {{else}}
+            <script src="../js/prefijosTel.js"></script>
+            <script src="../js/perfil.js"></script>
+            <script src="../js/editarPerfil.js"></script>
+        {{/if}}
     {{/if}}
-
-
 
 

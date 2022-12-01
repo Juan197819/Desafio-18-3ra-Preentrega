@@ -4,7 +4,7 @@ function productoDto(dato,urlImagen){
         nombre: dato.nombre,
         descripcion: dato.descripcion,
         codigo: dato.codigo,
-        foto: urlImagen,
+        foto: `../img/productos/${urlImagen}`,
         precio: dato.precio,
         stock: dato.stock
     }

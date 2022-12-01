@@ -1,0 +1,28 @@
+<div class="flexCol  w100 contentAround alignCenter">
+    <h1 class="colorWhite">Ingrese los datos del Producto</h1>
+    <form id='formProductos' style='width:50%;' class='p25 flexCol usuario  contentAround'>
+        <label for="nombre">Nombre de Producto</label>
+        <input type="text" required name="nombre"/>
+        
+        <label for="descripcion">Descripcion</label>
+        <textarea type="text" cols='20' rows='5' required name="descripcion"></textarea>
+        
+        <label for="codigo">Codigo de Producto</label>
+        <input type="text" required name="codigo"/>
+        
+        <label for="precio">Precio</label>
+        <input type="number" required name="precio"/>
+        
+        <label for="stock">Stock</label>
+        <input type="number" required name="stock"/>
+        
+        <div id='divProd' class="flexCol alignCenter contentAround p25 w70">
+            <label for="foto">Imagen de Producto</label>
+        </div>
+        <input id='fotoProducto' required type="file" name="foto"/>
+        <button style='margin: 10px auto;'>Crear Producto</button>
+    </form>
+    <div>
+        <a class="boton" href="/home">Ir a Centro de Mensajes</a>
+    </div>
+</div>   

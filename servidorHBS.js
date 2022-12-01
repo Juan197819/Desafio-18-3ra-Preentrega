@@ -6,9 +6,7 @@ import {Server as IOServer} from "socket.io";
 import passport from 'passport';
 import {cpus as numCPUS} from 'os'
 import cluster from 'cluster';
-import compression from 'compression';
 
-import lista from './prodAleatorios.js'
 import {daoMensaje } from './src/index.js';
 import normalizado from './src/config/configNormalizado.js'
 import {logueoWarning, logueoInfo, logueoError}from './src/config/confWinston.js';
@@ -19,9 +17,7 @@ import routerCarritos from './src/routes/routerCarritos.js'
 import routerUsuarios from './src/routes/routerUsuarios.js'
 import routerOrdenes from './src/routes/routerOrdenes.js'
 import routerApiRandoms from './src/routes/routerApiRandoms.js'
-
 import {routerRegister, routerLogin, routerLogout, routerHome} from './src/routes/routerViews.js'
-import auth from './src/routes/middleware/auth.js'
 
 //------------SETEO DE SERVER----------
 const app= express(); 
@@ -63,33 +59,7 @@ app.use('/api/ordenes', routerOrdenes)
 app.use('/register', routerRegister)
 app.use('/login', routerLogin)
 app.use('/logout', routerLogout)
-
-
-
-const info ={
-  argumentos: JSON.stringify(arg),
-  sistema:process.platform,
-  versionNode:process.version,  
-  memoria:process.memoryUsage().rss,
-  pathEjecucion:process.execPath,
-  proccessId:process.pid,
-  carpetaProyecto:process.cwd(),
-  cantProcesadores:numCPUS().length
-}
-app.get('/info', logueoInfo, (req, res) => {
-  info.compIsTrue = 'No Comprimida'
-  res.render("info",info)
-})
-app.get('/infoComp', compression(), logueoInfo, (req, res) => {
-  info.compIsTrue = 'Comprimida'
-  res.render("info",info)
-})
-app.get('/api/productos-test',auth, logueoInfo,(req, res) => {
-  let tablaProductos=lista()
-  res.render("tablaAleatoria", {tablaProductos});
-})
 app.use('/', routerHome)
-
 
 //------------------WEBSOCKETS------------------------------
 
